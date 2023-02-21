@@ -76,9 +76,6 @@ public class AccountService : IAccountService
         var token = new JwtSecurityToken(_authSettings.JwtIssuer, _authSettings.JwtIssuer, claims, expires: expDate,
             signingCredentials: cred);
 
-        // var tokenHandler = new JwtSecurityTokenHandler();
-        // return tokenHandler.WriteToken(token);
-        
         var cookieOptions = new CookieOptions()
         {
             HttpOnly = true,
@@ -97,5 +94,17 @@ public class AccountService : IAccountService
     {
         var user = await _dbContext.Users.FirstOrDefaultAsync(u => u.Id == _contextService.GetUserId);
         return user.ApplicationStatus;
+    }
+
+    public UserData GetUserData()
+    {
+        var data = new UserData()
+        {
+            Email = _contextService.User.FindFirst(c => c.Type == "Email").Value,
+            FirstName = _contextService.User.FindFirst(c => c.Type == "FirstName").Value,
+            LastName = _contextService.User.FindFirst(c => c.Type == "LastName").Value
+        };
+
+        return data;
     }
 }
