@@ -1,4 +1,5 @@
 using HighSchoolAPI.Database;
+using HighSchoolAPI.Services.Account;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -14,6 +15,8 @@ builder.Services.AddDbContext<AppDbContext>(config  =>
     var connectionString = builder.Configuration.GetValue<string>("ConnectionStrings:connectionString");
     config.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString));
 });
+
+builder.Services.AddScoped<IAccountService, AccountService>();
 
 var app = builder.Build();
 
