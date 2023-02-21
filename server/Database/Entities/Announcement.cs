@@ -11,4 +11,5 @@ public class Announcement
     public int ThumbnailId { get; set; }
 
     public virtual Thumbnail Thumbnail { get; set; }
+    public virtual List<Image> Images { get; set; }
 }
