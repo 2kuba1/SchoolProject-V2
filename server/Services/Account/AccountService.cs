@@ -15,12 +15,16 @@ public class AccountService : IAccountService
     private readonly AppDbContext _dbContext;
     private readonly AuthSettings _authSettings;
     private readonly IUserContextService _contextService;
+    private readonly IConfiguration _configuration;
+    private readonly IHttpContextAccessor _httpContextAccessor;
 
-    public AccountService(AppDbContext dbContext, AuthSettings authSettings, IUserContextService contextService)
+    public AccountService(AppDbContext dbContext, AuthSettings authSettings, IUserContextService contextService, IConfiguration configuration, IHttpContextAccessor httpContextAccessor)
     {
         _dbContext = dbContext;
         _authSettings = authSettings;
         _contextService = contextService;
+        _configuration = configuration;
+        _httpContextAccessor = httpContextAccessor;
     }
     
     public async Task RegisterUser(RegisterUserDto dto)
@@ -72,8 +76,21 @@ public class AccountService : IAccountService
         var token = new JwtSecurityToken(_authSettings.JwtIssuer, _authSettings.JwtIssuer, claims, expires: expDate,
             signingCredentials: cred);
 
-        var tokenHandler = new JwtSecurityTokenHandler();
-        return tokenHandler.WriteToken(token);
+        // var tokenHandler = new JwtSecurityTokenHandler();
+        // return tokenHandler.WriteToken(token);
+        
+        var cookieOptions = new CookieOptions()
+        {
+            HttpOnly = true,
+            Expires = DateTime.Now.AddMinutes(_configuration.GetValue<int>("Jwt:ExpireDays"))
+        };
+
+        var accessToken = new JwtSecurityTokenHandler().WriteToken(token);
+        
+        _httpContextAccessor?.HttpContext?.Response.Cookies.Append("accessToken", accessToken,
+            cookieOptions);
+
+        return accessToken;
     }
 
     public async Task<string> GetApplicationStatus()

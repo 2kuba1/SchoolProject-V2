@@ -56,6 +56,7 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseAuthentication();
+app.UseCookiePolicy();
 
 app.UseHttpsRedirection();
 
