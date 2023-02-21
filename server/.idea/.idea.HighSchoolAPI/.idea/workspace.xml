@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="1e1b466e-14ce-4082-a076-2201cf6c5601" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.HighSchoolAPI/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.HighSchoolAPI/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HighSchoolAPI.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/HighSchoolAPI.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Program.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,6 +24,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
+    "nodejs_package_manager_path": "npm",
     "settings.editor.selected.configurable": "preferences.pluginManager",
     "vue.rearranger.settings.migration": "true"
   }
@@ -83,7 +84,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1676973320477</updated>
-      <workItem from="1676973324231" duration="641000" />
+      <workItem from="1676973324231" duration="1262000" />
     </task>
     <servers />
   </component>
