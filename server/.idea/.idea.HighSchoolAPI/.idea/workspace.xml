@@ -3,10 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="1e1b466e-14ce-4082-a076-2201cf6c5601" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.HighSchoolAPI/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.HighSchoolAPI/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Controllers/AnnouncementController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Controllers/AnnouncementController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MappingProfiles/AnnouncementMappingProfile.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MappingProfiles/AnnouncementMappingProfile.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Services/Announcement/AnnouncementService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Services/Announcement/AnnouncementService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Services/Announcement/IAnnouncementService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Services/Announcement/IAnnouncementService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Database/Entities/Application.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Database/Entities/Application.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Migrations/AppDbContextModelSnapshot.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Migrations/AppDbContextModelSnapshot.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Program.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -101,7 +100,8 @@
       <workItem from="1677080388057" duration="2735000" />
       <workItem from="1677089060106" duration="624000" />
       <workItem from="1677091517956" duration="2583000" />
-      <workItem from="1677097743230" duration="1560000" />
+      <workItem from="1677097743230" duration="2113000" />
+      <workItem from="1677100391238" duration="1593000" />
     </task>
     <servers />
   </component>

@@ -4,6 +4,7 @@ using HighSchoolAPI.Database;
 using HighSchoolAPI.Services;
 using HighSchoolAPI.Services.Account;
 using HighSchoolAPI.Services.Announcement;
+using HighSchoolAPI.Services.Application;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
@@ -75,6 +76,7 @@ builder.Services.AddScoped<IUserContextService, UserContextService>();
 builder.Services.AddScoped<IAnnouncementService, AnnouncementService>();
 builder.Services.AddHttpContextAccessor();
 builder.Services.AddAutoMapper(typeof(Program).Assembly);
+builder.Services.AddScoped<IApplicationService, ApplicationService>();
 
 var app = builder.Build();
 
