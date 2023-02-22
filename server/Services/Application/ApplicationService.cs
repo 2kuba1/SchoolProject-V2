@@ -76,4 +76,15 @@ public class ApplicationService : IApplicationService
         user.ApplicationStatus = "Rejected";
         await _dbContext.SaveChangesAsync();
     }
+
+    public async Task<Database.Entities.Application> GetLastApplication()
+    {
+        var lastApplication = await _dbContext.Applications.OrderByDescending(i => i.Id).FirstOrDefaultAsync();
+
+        if (lastApplication is null)
+        {
+            throw new NotFoundException("All applications have been checked");
+        }
+        return lastApplication;
+    }
 }

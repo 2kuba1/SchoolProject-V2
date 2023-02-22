@@ -8,5 +8,5 @@ public class RegisterUserDto
     public string Password { get; set; }
     public string ConfirmPassword { get; set; }
 
-    public int RoleId { get; private set;  } = 2;
+    public int RoleId { get; private set;  } = 1;
 }

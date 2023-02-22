@@ -1,3 +1,4 @@
+using HighSchoolAPI.Database.Entities;
 using HighSchoolAPI.Models;
 using HighSchoolAPI.Services.Application;
 using Microsoft.AspNetCore.Authorization;
@@ -41,5 +42,14 @@ public class ApplicationController : ControllerBase
     {
         await _service.RejectApplication(id);
         return Ok();
+    }
+
+    [HttpGet]
+    [Route("getLastApplication")]
+    [Authorize(Roles = "Admin")]
+    public async Task<Application> GetLastApplication()
+    {
+        var lastApplication = await _service.GetLastApplication();
+        return lastApplication;
     }
 }
