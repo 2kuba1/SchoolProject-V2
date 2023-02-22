@@ -3,6 +3,7 @@ using HighSchoolAPI;
 using HighSchoolAPI.Database;
 using HighSchoolAPI.Services;
 using HighSchoolAPI.Services.Account;
+using HighSchoolAPI.Services.Announcement;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 
@@ -44,7 +45,9 @@ builder.Services.AddAuthentication(options =>
 builder.Services.AddScoped<IAccountService, AccountService>();
 builder.Services.AddSingleton(authSettings);
 builder.Services.AddScoped<IUserContextService, UserContextService>();
+builder.Services.AddScoped<IAnnouncementService, AnnouncementService>();
 builder.Services.AddHttpContextAccessor();
+builder.Services.AddAutoMapper(typeof(Program).Assembly);
 
 var app = builder.Build();
 
@@ -55,6 +58,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
+app.UseStaticFiles();
 app.UseAuthentication();
 app.UseCookiePolicy();
 
