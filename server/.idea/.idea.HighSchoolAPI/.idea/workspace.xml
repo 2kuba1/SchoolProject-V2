@@ -2,10 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1e1b466e-14ce-4082-a076-2201cf6c5601" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.HighSchoolAPI/.idea/discord.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.HighSchoolAPI/.idea/discord.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.HighSchoolAPI/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.HighSchoolAPI/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controllers/AccountController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Controllers/AccountController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controllers/AnnouncementController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Controllers/AnnouncementController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Database/Entities/Announcement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Database/Entities/Announcement.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Database/Entities/Image.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Database/Entities/Image.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Database/Entities/Thumbnail.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Database/Entities/Thumbnail.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HighSchoolAPI.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/HighSchoolAPI.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Migrations/AppDbContextModelSnapshot.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Migrations/AppDbContextModelSnapshot.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Models/RegisterUserDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Models/RegisterUserDto.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Program.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Services/Account/AccountService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Services/Account/AccountService.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -13,6 +19,8 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/312b18edab72464c8276a98f151bbea0a600/70/a01630ad/FileOptions.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/f1aee326024147e49348be4f2e96c1d81fc5a0/25/0616d6ae/DbSet`1.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/bd1d5c50194fea68ff3559c160230b0ab50f5acf4ce3061bffd6d62958e2182/ExceptionDispatchInfo.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -24,16 +32,16 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected=".NET Launch Settings Profile.HighSchoolAPI: http">
     <configuration name="HighSchoolAPI: IIS Express" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
       <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/HighSchoolAPI.csproj" />
@@ -89,7 +97,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1676973320477</updated>
-      <workItem from="1676973324231" duration="5347000" />
+      <workItem from="1676973324231" duration="7216000" />
+      <workItem from="1676982294795" duration="3881000" />
+      <workItem from="1676991464290" duration="4142000" />
+      <workItem from="1677016127059" duration="962000" />
+      <workItem from="1677057995284" duration="225000" />
+      <workItem from="1677065165943" duration="3796000" />
     </task>
     <servers />
   </component>

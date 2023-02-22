@@ -40,4 +40,13 @@ public class AccountController : ControllerBase
         var response = await _service.GetApplicationStatus();
         return Ok(response);
     }
+
+    [HttpGet]
+    [Route("getUserData")]
+    [Authorize(Roles = "User,Admin")]
+    public ActionResult<UserData> GetUserData()
+    {
+        var response = _service.GetUserData();
+        return Ok(response);
+    }
 }

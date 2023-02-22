@@ -1,7 +1,8 @@
+using HighSchoolAPI.Database.Entities;
 using HighSchoolAPI.Models;
 using HighSchoolAPI.Services.Announcement;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using Supabase.Storage;
 
 namespace HighSchoolAPI.Controllers;
 
@@ -15,12 +16,31 @@ public class AnnouncementController : ControllerBase
     {
         _service = service;
     }
-    
+
     [HttpPost]
     [Route("createAnnouncement")]
-    public async Task<ActionResult<List<Bucket>>> CreateAnnouncement([FromBody]CreateAnnouncementDto dto)
+    [Authorize(Roles = "Admin")]
+    public async Task<ActionResult> CreateAnnouncementWithoutImages([FromBody] CreateAnnouncementDto dto)
     {
-        var buckets = await _service.CreateAnnouncement();
-        return Ok(buckets);
+        await _service.CreateAnnouncementWithoutImages(dto);
+        return Ok();
+    }
+
+    [HttpPost]
+    [Route("{id:int}/addThumbnail")]
+    [Authorize(Roles = "Admin")]
+    public async Task<ActionResult> AddThumbnail([FromForm] IFormFile file, [FromRoute] int id)
+    {
+        await _service.AddThumbnail(file, id);
+        return Ok();
+    }
+
+    [HttpPost]
+    [Route("{id:int}/addImage")]
+    [Authorize(Roles = "Admin")]
+    public async Task<ActionResult> AddImage([FromForm] IFormFile file, [FromRoute] int id)
+    {
+        await _service.AddImage(file, id);
+        return Ok();
     }
 }
