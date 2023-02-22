@@ -43,4 +43,13 @@ public class AnnouncementController : ControllerBase
         await _service.AddImage(file, id);
         return Ok();
     }
+
+    [HttpDelete]
+    [Route("/deleteAnnouncement/{announcementTitle}")]
+    [Authorize(Roles = "Admin")]
+    public async Task<ActionResult> DeleteAnnouncement([FromRoute] string announcementTitle)
+    {
+        await _service.DeleteAnnouncement(announcementTitle);
+        return Ok();
+    }
 }
