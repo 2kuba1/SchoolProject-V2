@@ -52,4 +52,13 @@ public class AnnouncementController : ControllerBase
         await _service.DeleteAnnouncement(announcementTitle);
         return Ok();
     }
+
+    [HttpGet]
+    [Route("/getAnnouncements")]
+    [AllowAnonymous]
+    public ActionResult<IEnumerable<GetAnnouncementsDto>> GetAnnouncements([FromQuery] int pageNumber, [FromQuery]int pageSize)
+    {
+        var results = _service.GetAnnouncements(pageNumber, pageSize);
+        return Ok(results);
+    }
 }

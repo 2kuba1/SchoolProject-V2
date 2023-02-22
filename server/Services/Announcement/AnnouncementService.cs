@@ -1,3 +1,4 @@
+using AutoMapper;
 using HighSchoolAPI.Database;
 using HighSchoolAPI.Database.Entities;
 using HighSchoolAPI.Exceptions;
@@ -10,13 +11,13 @@ public class AnnouncementService : IAnnouncementService
 {
     private readonly AppDbContext _dbContext;
     private readonly IUserContextService _contextService;
-    private readonly IConfiguration _configuration;
+    private readonly IMapper _mapper;
 
-    public AnnouncementService(AppDbContext dbContext, IUserContextService contextService, IConfiguration configuration)
+    public AnnouncementService(AppDbContext dbContext, IUserContextService contextService, IMapper mapper)
     {
         _dbContext = dbContext;
         _contextService = contextService;
-        _configuration = configuration;
+        _mapper = mapper;
     }
 
     public async Task CreateAnnouncementWithoutImages(CreateAnnouncementDto dto)
@@ -135,5 +136,22 @@ public class AnnouncementService : IAnnouncementService
         
         _dbContext.Announcements.Remove(announcement);
         await _dbContext.SaveChangesAsync();
+    }
+
+    public PagedResult<GetAnnouncementsDto> GetAnnouncements(int pageNumber, int pageSize)
+    {
+        var baseQuery = _dbContext.Announcements.Include(x => x.Thumbnail);
+
+        var announcements = baseQuery.Skip(pageSize * (pageNumber - 1))
+            .Take(pageSize)
+            .ToList();
+
+        var totalItemsCount = baseQuery.Count();
+        
+        var mappedValues = _mapper.Map<List<GetAnnouncementsDto>>(announcements);
+
+        var results = new PagedResult<GetAnnouncementsDto>(mappedValues, totalItemsCount,pageSize, pageNumber);
+        
+        return results;
     }
 }

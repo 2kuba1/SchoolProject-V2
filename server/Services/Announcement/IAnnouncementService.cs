@@ -8,5 +8,6 @@ public interface IAnnouncementService
     Task AddThumbnail(IFormFile file, int id);
     Task AddImage(IFormFile file, int id);
     Task DeleteAnnouncement(string announcementTitle);
-    
+    PagedResult<GetAnnouncementsDto> GetAnnouncements(int pageNumber, int pageSize);
+
 }
