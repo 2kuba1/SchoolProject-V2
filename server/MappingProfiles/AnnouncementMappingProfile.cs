@@ -9,5 +9,6 @@ public class AnnouncementMappingProfile : Profile
     public AnnouncementMappingProfile()
     {
         CreateMap<Announcement, GetAnnouncementsDto>().ForMember(x => x.ThumbnailUrl, c => c.MapFrom(d => d.Thumbnail.ThumbnailUrl) );
+        CreateMap<Announcement, GetAnnouncementBodyDto>().ForMember(x => x.ThumbnailUrl, c => c.MapFrom(d => d.Thumbnail.ThumbnailUrl));
     }
 }

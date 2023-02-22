@@ -154,4 +154,29 @@ public class AnnouncementService : IAnnouncementService
         
         return results;
     }
+
+    public async Task<GetAnnouncementBodyDto> GetAnnouncementBody(int id)
+    {
+        var announcement = await _dbContext.Announcements.Include(x => x.Thumbnail).Include(x => x.Images).FirstOrDefaultAsync(x => x.Id == id);
+
+        if (announcement is null)
+        {
+            throw new NotFoundException("Announcement not found");
+        }
+
+        var imagesUrlList = _dbContext.Images.Where(x => x.AnnouncementId == announcement.Id).Select(x => x.ImageUrl).ToList();
+
+        var announcementBody = new Database.Entities.Announcement
+        {
+            Description = announcement.Description,
+            Title = announcement.Title,
+            Thumbnail = announcement.Thumbnail,
+            Images = announcement.Images
+        };
+
+        var mappedValues = _mapper.Map<GetAnnouncementBodyDto>(announcementBody);
+        mappedValues.Images = imagesUrlList;
+        
+        return mappedValues;
+    }
 }

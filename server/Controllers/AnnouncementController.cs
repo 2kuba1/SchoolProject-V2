@@ -27,7 +27,7 @@ public class AnnouncementController : ControllerBase
     }
 
     [HttpPost]
-    [Route("{id:int}/addThumbnail")]
+    [Route("addThumbnail/{id:int}")]
     [Authorize(Roles = "Admin")]
     public async Task<ActionResult> AddThumbnail([FromForm] IFormFile file, [FromRoute] int id)
     {
@@ -36,7 +36,7 @@ public class AnnouncementController : ControllerBase
     }
 
     [HttpPost]
-    [Route("{id:int}/addImage")]
+    [Route("addImage/{id:int}")]
     [Authorize(Roles = "Admin")]
     public async Task<ActionResult> AddImage([FromForm] IFormFile file, [FromRoute] int id)
     {
@@ -60,5 +60,14 @@ public class AnnouncementController : ControllerBase
     {
         var results = _service.GetAnnouncements(pageNumber, pageSize);
         return Ok(results);
+    }
+
+    [HttpGet]
+    [Route("/getAnnouncementBody/{id:int}")]
+    [AllowAnonymous]
+    public async Task<ActionResult<GetAnnouncementBodyDto>> GetAnnouncementBody([FromRoute] int id)
+    {
+        var response = await _service.GetAnnouncementBody(id);
+        return Ok(response);
     }
 }

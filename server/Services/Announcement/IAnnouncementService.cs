@@ -9,5 +9,6 @@ public interface IAnnouncementService
     Task AddImage(IFormFile file, int id);
     Task DeleteAnnouncement(string announcementTitle);
     PagedResult<GetAnnouncementsDto> GetAnnouncements(int pageNumber, int pageSize);
+    Task<GetAnnouncementBodyDto> GetAnnouncementBody(int id);
 
 }
