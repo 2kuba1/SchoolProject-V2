@@ -1,6 +1,10 @@
+.Home {
+  height: 200vh;
+}
+
 .HomeBackground {
   background-size: cover;
-  background-image: url('../../assets/HighSchool.svg');
+  background-image: url('../../assets/HighSchool.png');
   height: 95vh;
   max-width: 100%;
   display: flex;
@@ -15,4 +19,64 @@
   position: relative;
   bottom: 1rem;
   cursor: pointer;
+}
+
+h1 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  color: black;
+  font-size: 9.6rem;
+}
+
+h1::after {
+  content: '';
+  display: block;
+  width: 45rem;
+  border-bottom: 0.5rem solid #399f2e;
+  border-radius: 1rem;
+}
+
+.Container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.About {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.AboutContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  height: 30rem;
+  width: 64rem;
+  background-color: #2b2b2b;
+  border-radius: 2.5rem;
+  border: 1px solid black;
+}
+
+.AboutImgParent {
+  height: 100%;
+}
+
+.AboutImg {
+  height: 100%;
+  border-radius: 2.4rem 0 0 2.4rem;
+}
+
+.AboutText {
+  margin: 2.5rem;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+  font-size: 1.6rem;
+  width: 50%;
 }
