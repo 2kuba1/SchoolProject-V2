@@ -1,0 +1,35 @@
+footer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 1.6rem;
+  background-color: #2b2b2b;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  color: #626363;
+  justify-content: space-between;
+}
+
+footer div {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  margin: 2.5rem;
+}
+
+footer img {
+  height: 75%;
+  margin: 2.5rem;
+}
+
+footer a {
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+footer p {
+  position: relative;
+  right: 2.5rem;
+}
