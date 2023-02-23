@@ -25,6 +25,15 @@ const Home = () => {
             </p>
           </div>
         </div>
+        <div className={styles.Profiles}>
+          <h1>Profiles</h1>
+          <div className={styles.ProfilesContainer}>
+            <div className={styles.Military}></div>
+            <div className={styles.ComputerScience}></div>
+            <div className={styles.GrapicDesign}></div>
+            <div className={styles.Logistic}></div>
+          </div>
+        </div>
       </div>
     </div>
   );

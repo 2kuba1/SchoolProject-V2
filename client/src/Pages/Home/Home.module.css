@@ -1,5 +1,5 @@
 .Home {
-  height: 200vh;
+  height: 350vh;
 }
 
 .HomeBackground {
@@ -22,18 +22,20 @@
 }
 
 h1 {
+  position: relative;
+  top: 3.5rem;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
   color: black;
-  font-size: 9.6rem;
+  font-size: 4.8rem;
 }
 
 h1::after {
   content: '';
   display: block;
-  width: 45rem;
+  width: 30rem;
   border-bottom: 0.5rem solid #399f2e;
   border-radius: 1rem;
 }
@@ -42,6 +44,7 @@ h1::after {
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
 }
 
 .About {
@@ -52,6 +55,8 @@ h1::after {
 }
 
 .AboutContainer {
+  position: relative;
+  top: 10rem;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -79,4 +84,54 @@ h1::after {
   padding: 1rem;
   font-size: 1.6rem;
   width: 50%;
+}
+
+.Profiles {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+  top: 10rem;
+}
+
+.ProfilesContainer {
+  position: relative;
+  top: 7.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.Military {
+  margin: 0.5rem;
+  width: 64rem;
+  height: 16rem;
+  background-color: #2b2b2b;
+  border-radius: 2.5rem;
+}
+
+.ComputerScience {
+  margin: 0.5rem;
+  width: 64rem;
+  height: 16rem;
+  background-color: #2b2b2b;
+  border-radius: 2.5rem;
+}
+
+.GrapicDesign {
+  margin: 0.5rem;
+  width: 64rem;
+  height: 16rem;
+  background-color: #2b2b2b;
+  border-radius: 2.5rem;
+}
+
+.Logistic {
+  margin: 0.5rem;
+  width: 64rem;
+  height: 16rem;
+  background-color: #2b2b2b;
+  border-radius: 2.5rem;
 }
