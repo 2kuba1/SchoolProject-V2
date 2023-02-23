@@ -3,6 +3,9 @@ nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  position: absolute;
+  top: 0;
+  width: 100%;
 
   background-color: #2b2b2b;
 }

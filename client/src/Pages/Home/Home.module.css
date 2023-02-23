@@ -1,0 +1,18 @@
+.HomeBackground {
+  background-size: cover;
+  background-image: url('../../assets/HighSchool.svg');
+  height: 95vh;
+  max-width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-direction: column;
+}
+
+.HomeBackground img {
+  height: 2.4rem;
+  width: 2.4rem;
+  position: relative;
+  bottom: 1rem;
+  cursor: pointer;
+}
