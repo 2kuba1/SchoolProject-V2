@@ -1,10 +1,14 @@
 using System.Text;
+using FluentValidation;
+using FluentValidation.AspNetCore;
 using HighSchoolAPI;
 using HighSchoolAPI.Database;
+using HighSchoolAPI.Models;
 using HighSchoolAPI.Services;
 using HighSchoolAPI.Services.Account;
 using HighSchoolAPI.Services.Announcement;
 using HighSchoolAPI.Services.Application;
+using HighSchoolAPI.Validators;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
@@ -78,6 +82,11 @@ builder.Services.AddHttpContextAccessor();
 builder.Services.AddAutoMapper(typeof(Program).Assembly);
 builder.Services.AddScoped<IApplicationService, ApplicationService>();
 builder.Services.AddScoped<ErrorHandlingMiddleware>();
+builder.Services.AddFluentValidation(fv => fv.AutomaticValidationEnabled = true);
+builder.Services.AddScoped<IValidator<RegisterUserDto>, RegisterValidator>();
+builder.Services.AddScoped<IValidator<LoginDto>, LoginValidator>();
+builder.Services.AddScoped<IValidator<CreateAnnouncementDto>, CreateAnnouncementValidator>();
+builder.Services.AddScoped<IValidator<CreateApplicationDto>, CreateApplicationValidator>();
 
 var app = builder.Build();
 
