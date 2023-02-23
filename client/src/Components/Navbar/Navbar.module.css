@@ -9,7 +9,7 @@ nav {
 nav ul {
   display: flex;
   flex-direction: row;
-  gap: 2rem;
+  gap: 3rem;
   align-items: center;
   height: 100%;
 }
