@@ -1,0 +1,42 @@
+.ClassImage {
+  height: 100% auto;
+  width: 40%;
+  border-radius: 1.9rem 0 0 1.9rem;
+  object-fit: cover;
+}
+
+.ClassHeader {
+  position: relative;
+  top: 2rem;
+  color: white;
+  text-align: center;
+  font-size: 2.4rem;
+  margin: 0;
+}
+
+.ClassText {
+  position: relative;
+  top: 2rem;
+  color: white;
+  text-align: center;
+  font-size: 1.2rem;
+  padding-top: 0 !important;
+  padding: 2.5rem;
+}
+
+.Resize {
+  transition: 0.2s ease-in-out;
+}
+
+.Resize:hover {
+  scale: 1.1;
+}
+
+.Profile {
+  margin: 1rem;
+  width: 72rem;
+  height: 16rem;
+  background-color: #2b2b2b;
+  border-radius: 2rem;
+  display: flex;
+}
