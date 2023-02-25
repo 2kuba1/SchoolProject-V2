@@ -5,7 +5,10 @@
       <change beforePath="$PROJECT_DIR$/../client/src/Pages/Announcements/Announcements.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/Pages/Announcements/Announcements.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../client/src/Pages/Home/Home.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/Pages/Home/Home.module.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../client/src/Pages/Home/Home.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/Pages/Home/Home.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.HighSchoolAPI/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.HighSchoolAPI/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HighSchoolAPI.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/HighSchoolAPI.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Services/Announcement/AnnouncementService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Services/Announcement/AnnouncementService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/appsettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/appsettings.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -105,6 +108,8 @@
       <workItem from="1677168209710" duration="1258000" />
       <workItem from="1677177088293" duration="64000" />
       <workItem from="1677323292018" duration="29000" />
+      <workItem from="1677328630521" duration="347000" />
+      <workItem from="1677358575570" duration="1540000" />
     </task>
     <servers />
   </component>

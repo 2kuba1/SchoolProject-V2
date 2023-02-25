@@ -4,6 +4,8 @@ using HighSchoolAPI.Database.Entities;
 using HighSchoolAPI.Exceptions;
 using HighSchoolAPI.Models;
 using Microsoft.EntityFrameworkCore;
+using Supabase.Storage;
+using FileOptions = System.IO.FileOptions;
 
 namespace HighSchoolAPI.Services.Announcement;
 
@@ -12,14 +14,16 @@ public class AnnouncementService : IAnnouncementService
     private readonly AppDbContext _dbContext;
     private readonly IUserContextService _contextService;
     private readonly IMapper _mapper;
+    private readonly IConfiguration _configuration;
 
-    public AnnouncementService(AppDbContext dbContext, IUserContextService contextService, IMapper mapper)
+    public AnnouncementService(AppDbContext dbContext, IUserContextService contextService, IMapper mapper, IConfiguration configuration)
     {
         _dbContext = dbContext;
         _contextService = contextService;
         _mapper = mapper;
+        _configuration = configuration;
     }
-
+    
     public async Task CreateAnnouncementWithoutImages(CreateAnnouncementDto dto)
     {
         var announcement = new Database.Entities.Announcement()
@@ -51,13 +55,28 @@ public class AnnouncementService : IAnnouncementService
             await file.CopyToAsync(stream);
         }
 
+        var supabaseUrl = _configuration.GetSection("Supabase").GetValue<string>("Url");
+        var supabaseKey = _configuration.GetSection("Supabase").GetValue<string>("Key");
+        
+        var options = new Supabase.SupabaseOptions
+        {
+            AutoConnectRealtime = true
+        };
+        
+        var supabase = new Supabase.Client(supabaseUrl, supabaseKey, options);
+        await supabase.InitializeAsync();
+        
+        await supabase.Storage
+            .From("thumbnails")
+            .Upload(fullPath, newFileName, new Supabase.Storage.FileOptions() { CacheControl = "3600", Upsert = false });
+        
         var thumbnail = new Thumbnail()
         {
-            ThumbnailUrl = fullPath,
+            ThumbnailUrl = "https://yjvgyugzpihjaeyadykg.supabase.co/storage/v1/object/public/thumbnails/"+newFileName,
             FileName = newFileName,
             AnnouncementId = id
         };
-
+        
         await _dbContext.Thumbnails.AddAsync(thumbnail);
         await _dbContext.SaveChangesAsync();
     }
@@ -79,9 +98,24 @@ public class AnnouncementService : IAnnouncementService
             await file.CopyToAsync(stream);
         }
 
+        var supabaseUrl = _configuration.GetSection("Supabase").GetValue<string>("Url");
+        var supabaseKey = _configuration.GetSection("Supabase").GetValue<string>("Key");
+        
+        var options = new Supabase.SupabaseOptions
+        {
+            AutoConnectRealtime = true
+        };
+        
+        var supabase = new Supabase.Client(supabaseUrl, supabaseKey, options);
+        await supabase.InitializeAsync();
+        
+        await supabase.Storage
+            .From("images")
+            .Upload(fullPath, newFileName, new Supabase.Storage.FileOptions() { CacheControl = "3600", Upsert = false });
+        
         var image = new Image()
         {
-            ImageUrl = fullPath,
+            ImageUrl = "https://yjvgyugzpihjaeyadykg.supabase.co/storage/v1/object/public/images/"+newFileName,
             FileName = newFileName,
             AnnouncementId = id
         };
