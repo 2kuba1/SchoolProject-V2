@@ -1,3 +1,4 @@
+import styles from './Announcements.module.css';
 import { useState } from 'react';
 import Announcement from '../../Components/Announcement/Announcement';
 import useAxios from '../../Hooks/UseAxios';
@@ -28,7 +29,7 @@ const Announcements = () => {
   console.log(data);
 
   return (
-    <div>
+    <div className={styles.Announcements}>
       {isPending && <div>Loading ...</div>}
       {data &&
         data.items.map(data => (

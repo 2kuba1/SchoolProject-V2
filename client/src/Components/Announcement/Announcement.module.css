@@ -1,0 +1,42 @@
+.Announcement {
+  background-color: #222;
+  height: 10rem;
+  width: 50rem;
+  cursor: pointer;
+  transition: 0.2s ease-in-out;
+  border-radius: 2rem;
+}
+
+.Announcement:hover {
+  scale: 1.2;
+}
+
+.AnnouncementWrapper {
+  display: flex;
+}
+
+.AnnouncementImg {
+  height: 10rem;
+  width: 25rem;
+  object-fit: cover;
+  border-radius: 1.9rem 0 0 1.9rem;
+}
+
+.TextContent {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 50%;
+  color: #d3d3d3;
+}
+
+.TextContent span {
+  position: relative;
+  top: 2rem;
+  left: 9rem;
+}
+
+.ImgWrapper {
+  width: 50%;
+}
