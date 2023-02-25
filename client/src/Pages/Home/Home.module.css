@@ -26,7 +26,7 @@
   scale: 1.5;
 }
 
-h1 {
+.HomeHeader {
   position: relative;
   top: 3.5rem;
   display: flex;
@@ -37,7 +37,7 @@ h1 {
   font-size: 4.8rem;
 }
 
-h1::after {
+.HomeHeader::after {
   content: '';
   display: block;
   width: 30rem;

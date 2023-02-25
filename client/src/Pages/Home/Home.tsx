@@ -49,7 +49,7 @@ const Home = () => {
       </div>
       <div className={styles.Container}>
         <div className={styles.About}>
-          <h1>About</h1>
+          <h1 className={styles.HomeHeader}>About</h1>
           <div className={styles.AboutContainer}>
             <div className={styles.AboutImgParent}>
               <img className={styles.AboutImg} src={Class} alt='Class' />
@@ -65,7 +65,9 @@ const Home = () => {
           </div>
         </div>
         <div className={styles.Profiles}>
-          <h1 ref={ref}>Profiles</h1>
+          <h1 className={styles.HomeHeader} ref={ref}>
+            Profiles
+          </h1>
           <div className={styles.ProfilesContainer}>
             {profileArray.map(data => (
               <Profiles
