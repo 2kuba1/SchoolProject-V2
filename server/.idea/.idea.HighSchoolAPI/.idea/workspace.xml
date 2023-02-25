@@ -2,10 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1e1b466e-14ce-4082-a076-2201cf6c5601" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../client/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../client/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/src/assets/react.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/index.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/Pages/Announcements/Announcements.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/Pages/Announcements/Announcements.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/Pages/Home/Home.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/Pages/Home/Home.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/Pages/Home/Home.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/Pages/Home/Home.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Program.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -104,6 +104,7 @@
       <workItem from="1677100391238" duration="5005000" />
       <workItem from="1677168209710" duration="1258000" />
       <workItem from="1677177088293" duration="64000" />
+      <workItem from="1677323292018" duration="29000" />
     </task>
     <servers />
   </component>

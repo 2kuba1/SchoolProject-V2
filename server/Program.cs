@@ -88,6 +88,17 @@ builder.Services.AddScoped<IValidator<LoginDto>, LoginValidator>();
 builder.Services.AddScoped<IValidator<CreateAnnouncementDto>, CreateAnnouncementValidator>();
 builder.Services.AddScoped<IValidator<CreateApplicationDto>, CreateApplicationValidator>();
 
+builder.Services.AddCors(setup =>
+{
+    setup.AddPolicy("ui", builder =>
+    {
+        builder
+            .AllowAnyHeader()
+            .AllowAnyMethod()
+            .AllowAnyOrigin();
+    });
+});
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -96,7 +107,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
-
+app.UseCors("ui");
 app.UseMiddleware<ErrorHandlingMiddleware>();
 app.UseStaticFiles();
 app.UseAuthentication();
