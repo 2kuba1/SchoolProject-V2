@@ -11,6 +11,7 @@ function useAxios<T>(
 
   useEffect(() => {
     if (loadOnStart) sendRequest();
+    else setIsPending(false);
   }, []);
 
   const request = () => {

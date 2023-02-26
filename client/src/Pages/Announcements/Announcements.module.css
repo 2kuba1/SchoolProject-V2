@@ -1,8 +1,36 @@
 .Announcements {
-  height: 100vh;
+  height: 80vh;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   gap: 3.5rem;
+  cursor: pointer;
+}
+
+.Buttons {
+  position: relative;
+  top: -2rem;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  position: relative;
+  right: 35rem;
+  gap: 1.6rem;
+}
+
+.Buttons button {
+  height: 2rem;
+  width: 2rem;
+  background-color: #2b2b2b;
+  color: #399f2e;
+  cursor: pointer;
+}
+
+.Buttons p {
+  font-size: 1.6rem;
+}
+
+.Hidden {
+  display: none;
 }
