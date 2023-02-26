@@ -2,7 +2,7 @@ import styles from './Announcements.module.css';
 import { useEffect, useState } from 'react';
 import Announcement from '../../Components/Announcement/Announcement';
 import useAxios from '../../Hooks/UseAxios';
-import React from 'react';
+import { Link } from 'react-router-dom';
 
 interface items {
   id: number;
@@ -43,15 +43,27 @@ const Announcements = () => {
         {isPending && <div>Loading ...</div>}
         {data &&
           data.items.map(data => (
-            <Announcement
-              creationDate={data.creationDate}
-              id={data.id}
-              title={data.title}
-              thumbnailUrl={data.thumbnailUrl}
-            />
+            <Link to={`/announcement/${data.id}`}>
+              <Announcement
+                creationDate={data.creationDate}
+                id={data.id}
+                title={data.title}
+                thumbnailUrl={data.thumbnailUrl}
+              />
+            </Link>
           ))}
       </div>
       <div className={styles.Buttons}>
+        <button
+          className={pageNumber === totalPages ? '' : styles.Hidden}
+          onClick={() => {
+            if (pageNumber === totalPages) {
+              setPageNumber((pageNumber -= 2));
+            }
+          }}
+        >
+          {pageNumber - 2}
+        </button>
         <button
           className={pageNumber - 1 <= 0 ? styles.Hidden : ''}
           onClick={() => {
