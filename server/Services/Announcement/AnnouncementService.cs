@@ -174,7 +174,7 @@ public class AnnouncementService : IAnnouncementService
 
     public PagedResult<GetAnnouncementsDto> GetAnnouncements(int pageNumber, int pageSize)
     {
-        var baseQuery = _dbContext.Announcements.Include(x => x.Thumbnail);
+        var baseQuery = _dbContext.Announcements.Include(x => x.Thumbnail).OrderByDescending(x => x.Id);
 
         var announcements = baseQuery.Skip(pageSize * (pageNumber - 1))
             .Take(pageSize)
