@@ -1,11 +1,11 @@
 .Home {
-  height: 350vh;
+  height: 340vh;
 }
 
 .HomeBackground {
   background-size: cover;
   background-image: url('../../assets/HighSchool.png');
-  height: 95vh;
+  height: 85vh;
   max-width: 100%;
   display: flex;
   align-items: center;
