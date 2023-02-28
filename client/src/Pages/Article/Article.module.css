@@ -55,6 +55,7 @@
   height: 20rem;
   width: 30rem;
   transition: 0.2s ease-in-out;
+  border-radius: 1rem;
 }
 
 .Image:hover {
