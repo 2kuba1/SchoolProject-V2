@@ -36,7 +36,7 @@ const Announcements = () => {
   }, [pageNumber]);
 
   const totalPages = data?.totalPages;
-
+  
   return (
     <div>
       <div className={styles.Announcements}>
@@ -55,7 +55,7 @@ const Announcements = () => {
       </div>
       <div className={styles.Buttons}>
         <button
-          className={pageNumber === totalPages ? '' : styles.Hidden}
+          className={pageNumber === totalPages && pageNumber-2 > 0 ? '' : styles.Hidden}
           onClick={() => {
             if (pageNumber === totalPages) {
               setPageNumber((pageNumber -= 2));
@@ -84,6 +84,16 @@ const Announcements = () => {
           }}
         >
           {pageNumber + 1}
+        </button>
+        <button
+          className={pageNumber === 1 && pageNumber+2 <= totalPages! ? '' : styles.Hidden}
+          onClick={() => {
+            if (pageNumber+2 <= totalPages!) {
+              setPageNumber((pageNumber += 2));
+            }
+          }}
+        >
+          {pageNumber + 2}
         </button>
         <p>of</p>
         <button
