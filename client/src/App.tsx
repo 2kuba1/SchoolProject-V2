@@ -10,6 +10,7 @@ import AccountDetails from './Pages/AccountDetails/AccountDetails';
 import AdminPanel from './Pages/AdminPanel/AdminPanel';
 import Navbar from './Components/Navbar/Navbar';
 import Footer from './Components/Footer/Footer';
+import NotFound from './Pages/NotFound/NotFound';
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
         <Route path='/register' element={<Register />} />
         <Route path='/accountDetails' element={<AccountDetails />} />
         <Route path='/adminPanel' element={<AdminPanel />} />
+        <Route path='*' element={<NotFound/>}/>
       </Routes>
       <Footer />
     </div>
