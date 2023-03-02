@@ -1,5 +1,31 @@
-.XD {
-  height: 5rem;
-  width: 5rem;
-  background-color: aqua;
+.Menu {
+  height: 12rem;
+  width: 10rem;
+  background-color: #626363;
+  position: absolute;
+  top: 4rem;
+  right: 7rem;
+  display: flex;
+  border-radius: 1rem;
+  display: flex;
+
+  justify-content: center;
+  flex-direction: column;
+}
+
+.Links {
+  position: relative;
+  left: 0.5rem;
+}
+
+.Menu a {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  font-size: 1.6rem;
+}
+
+.AccountImg {
+  height: 2rem !important;
+  width: 2rem !important;
 }
