@@ -1,7 +1,7 @@
 import styles from './Announcements.module.css';
 import { useEffect, useState } from 'react';
 import Announcement from '../../Components/Announcement/Announcement';
-import useAxios from '../../Hooks/UseAxios';
+import useAxios from '../../Hooks/useAxios';
 import { Link } from 'react-router-dom';
 
 interface items {
@@ -36,7 +36,7 @@ const Announcements = () => {
   }, [pageNumber]);
 
   const totalPages = data?.totalPages;
-  
+
   return (
     <div>
       <div className={styles.Announcements}>
@@ -55,7 +55,9 @@ const Announcements = () => {
       </div>
       <div className={styles.Buttons}>
         <button
-          className={pageNumber === totalPages && pageNumber-2 > 0 ? '' : styles.Hidden}
+          className={
+            pageNumber === totalPages && pageNumber - 2 > 0 ? '' : styles.Hidden
+          }
           onClick={() => {
             if (pageNumber === totalPages) {
               setPageNumber((pageNumber -= 2));
@@ -86,9 +88,13 @@ const Announcements = () => {
           {pageNumber + 1}
         </button>
         <button
-          className={pageNumber === 1 && pageNumber+2 <= totalPages! ? '' : styles.Hidden}
+          className={
+            pageNumber === 1 && pageNumber + 2 <= totalPages!
+              ? ''
+              : styles.Hidden
+          }
           onClick={() => {
-            if (pageNumber+2 <= totalPages!) {
+            if (pageNumber + 2 <= totalPages!) {
               setPageNumber((pageNumber += 2));
             }
           }}

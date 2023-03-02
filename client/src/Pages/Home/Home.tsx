@@ -8,14 +8,11 @@ import LogisticImg from '../../assets/LogisticProfile.png';
 import { useContext, useEffect, useRef } from 'react';
 import Profiles, { profiles } from '../../Components/Profiles/Profiles';
 import { NavbarContext } from '../../Contexts/NavbarContext';
+import useCloseMenu from '../../Hooks/useCloseMenu';
 
 const Home = () => {
-  const { SetIsShown } = useContext(NavbarContext);
+  useCloseMenu();
   const ref = useRef<null | HTMLDivElement>(null);
-
-  useEffect(() => {
-    SetIsShown({ isShown: false });
-  }, []);
 
   const handleScrollDown = () => {
     ref.current?.scrollIntoView({ behavior: 'smooth' });

@@ -1,5 +1,5 @@
 import { useParams } from 'react-router-dom';
-import useAxios from '../../Hooks/UseAxios';
+import useAxios from '../../Hooks/useAxios';
 import styles from './Article.module.css';
 
 type article = {
