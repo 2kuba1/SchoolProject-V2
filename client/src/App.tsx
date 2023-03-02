@@ -11,10 +11,11 @@ import AdminPanel from './Pages/AdminPanel/AdminPanel';
 import Navbar from './Components/Navbar/Navbar';
 import Footer from './Components/Footer/Footer';
 import NotFound from './Pages/NotFound/NotFound';
+import NavbarProvider from './Contexts/NavbarContext';
 
 function App() {
   return (
-    <div>
+    <>
       <Navbar />
       <Routes>
         <Route index path='/' element={<Home />} />
@@ -26,10 +27,10 @@ function App() {
         <Route path='/register' element={<Register />} />
         <Route path='/accountDetails' element={<AccountDetails />} />
         <Route path='/adminPanel' element={<AdminPanel />} />
-        <Route path='*' element={<NotFound/>}/>
+        <Route path='*' element={<NotFound />} />
       </Routes>
       <Footer />
-    </div>
+    </>
   );
 }
 

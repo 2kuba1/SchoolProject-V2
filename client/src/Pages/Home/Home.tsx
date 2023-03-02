@@ -5,11 +5,17 @@ import MilitaryClassImg from '../../assets/MilitaryProfile.png';
 import ComputerScienceImg from '../../assets/ComuterScience.png';
 import GraphicDesignImg from '../../assets/GraphicDesign.png';
 import LogisticImg from '../../assets/LogisticProfile.png';
-import { useRef } from 'react';
+import { useContext, useEffect, useRef } from 'react';
 import Profiles, { profiles } from '../../Components/Profiles/Profiles';
+import { NavbarContext } from '../../Contexts/NavbarContext';
 
 const Home = () => {
+  const { SetIsShown } = useContext(NavbarContext);
   const ref = useRef<null | HTMLDivElement>(null);
+
+  useEffect(() => {
+    SetIsShown({ isShown: false });
+  }, []);
 
   const handleScrollDown = () => {
     ref.current?.scrollIntoView({ behavior: 'smooth' });
