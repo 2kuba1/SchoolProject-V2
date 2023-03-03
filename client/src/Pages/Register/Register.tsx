@@ -2,6 +2,7 @@ import styles from './Register.module.css';
 import useCloseMenu from '../../Hooks/useCloseMenu';
 import { z } from 'zod';
 import { FormEvent, useRef, useState } from 'react';
+import axios from 'axios';
 
 const Register = () => {
   useCloseMenu();
@@ -11,12 +12,13 @@ const Register = () => {
   const password = useRef<HTMLInputElement>(null);
   const confirmPassword = useRef<HTMLInputElement>(null);
 
-  const [firstNameError, setFirsNameError] = useState<boolean>(false);
-  const [lastNameError, setLastNameError] = useState<boolean>(false);
-  const [emailError, setEmailError] = useState<boolean>(false);
-  const [passwordError, setPasswordError] = useState<boolean>(false);
-  const [confirmPasswordError, setConfirmPasswordError] =
-    useState<boolean>(false);
+  const [firstNameError, setFirsNameError] = useState(false);
+  const [lastNameError, setLastNameError] = useState(false);
+  const [emailError, setEmailError] = useState(false);
+  const [passwordError, setPasswordError] = useState(false);
+  const [confirmPasswordError, setConfirmPasswordError] = useState(false);
+  const [emailIsAlreadyTakenError, setEmailIsAlreadyTakenError] =
+    useState(false);
   const [isSucceed, setIsSucceed] = useState<boolean>(false);
 
   const lowercase = new RegExp('[a-z]+');
@@ -27,35 +29,30 @@ const Register = () => {
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    const nameSchema = z
-      .string()
-      .min(3, { message: 'This field must contain at least 3 chars' })
-      .max(60, { message: 'This field can contain only 60 chars' });
+    setFirsNameError(false);
+    setLastNameError(false);
+    setEmailError(false);
+    setPasswordError(false);
+    setConfirmPasswordError(false);
+    setEmailIsAlreadyTakenError(false);
 
-    const emailSchema = z.string().email({ message: 'Invalid email address' });
+    const nameSchema = z.string().min(3).max(60);
+
+    const emailSchema = z.string().email();
 
     const passwordsSchema = z
       .object({
         password: z.string().min(1),
         confirm: z.string().min(1),
       })
-      .refine(data => data.password === data.confirm, {
-        message: "Password don't match",
-      });
-
-    const passwordResponse =
-      'Password must contain special symbol, capital letter and digit';
+      .refine(data => data.password === data.confirm);
 
     const passwordSchema = z
       .string()
-      .regex(lowercase, {
-        message: passwordResponse,
-      })
-      .regex(uppercase, {
-        message: passwordResponse,
-      })
-      .regex(digit, { message: passwordResponse })
-      .regex(symbol, { message: passwordResponse })
+      .regex(lowercase)
+      .regex(uppercase)
+      .regex(digit)
+      .regex(symbol)
       .min(8)
       .max(25);
 
@@ -87,12 +84,24 @@ const Register = () => {
       isPasswordValid.success &&
       isConfirmPasswrodValid.success
     ) {
-      setFirsNameError(false);
-      setLastNameError(false);
-      setEmailError(false);
-      setPasswordError(false);
-      setConfirmPasswordError(false);
-      setIsSucceed(true);
+      try {
+        await axios.post('http://localhost:5259/api/account/register', {
+          firstName: firstName.current?.value,
+          lastName: lastName.current?.value,
+          email: email.current?.value,
+          password: password.current?.value,
+          confirmPassword: confirmPassword.current?.value,
+        });
+        setFirsNameError(false);
+        setLastNameError(false);
+        setEmailError(false);
+        setPasswordError(false);
+        setConfirmPasswordError(false);
+        setEmailIsAlreadyTakenError(false);
+        setIsSucceed(true);
+      } catch (error) {
+        setEmailIsAlreadyTakenError(true);
+      }
     }
   };
 
@@ -114,6 +123,7 @@ const Register = () => {
         </div>
         <input ref={email} type='email' placeholder='Email' />
         {emailError && <p>Invalid email address</p>}
+        {emailIsAlreadyTakenError && <p>This email is already taken</p>}
         <input ref={password} type='password' placeholder='Password' />
         {passwordError && (
           <p>Password must contain special symbol, capital letter and digit</p>
