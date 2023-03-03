@@ -1,0 +1,64 @@
+.Register {
+  height: 90vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.Register h1 {
+  position: relative;
+  top: -2.5rem;
+  font-size: 3.6rem;
+}
+
+.Register form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 30rem;
+}
+
+.Register form input {
+  height: 3rem;
+  background-color: #2b2b2b;
+  border: none;
+  color: #d3d3d3;
+  border-radius: 1rem;
+  font-size: 1.2rem;
+  padding-left: 0.5rem;
+}
+
+.Names {
+  display: flex;
+  justify-content: space-between;
+}
+
+.Names input {
+  width: 47.5%;
+}
+
+.NamesErros {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4rem;
+}
+
+.Register input[type='submit'] {
+  padding: 0;
+  cursor: pointer;
+}
+
+.Register p {
+  text-align: center;
+  color: crimson;
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.Succeed p {
+  color: #399f2e;
+  font-size: 1.6rem;
+}
