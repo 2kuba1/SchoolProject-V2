@@ -1,5 +1,6 @@
 import { useParams } from 'react-router-dom';
 import useAxios from '../../Hooks/useAxios';
+import useCloseMenu from '../../Hooks/useCloseMenu';
 import styles from './Article.module.css';
 
 type article = {
@@ -10,6 +11,7 @@ type article = {
 };
 
 const Article = () => {
+  useCloseMenu();
   const { id } = useParams();
 
   const [data, isPending, error, request] = useAxios<article>({

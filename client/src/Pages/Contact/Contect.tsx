@@ -1,4 +1,7 @@
+import useCloseMenu from '../../Hooks/useCloseMenu';
+
 const Contact = () => {
+  useCloseMenu();
   return <div></div>;
 };
 

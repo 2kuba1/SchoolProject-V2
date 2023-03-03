@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 import Announcement from '../../Components/Announcement/Announcement';
 import useAxios from '../../Hooks/useAxios';
 import { Link } from 'react-router-dom';
+import useCloseMenu from '../../Hooks/useCloseMenu';
 
 interface items {
   id: number;
@@ -20,6 +21,7 @@ interface announcement {
 }
 
 const Announcements = () => {
+  useCloseMenu();
   let [pageNumber, setPageNumber] = useState<number>(1);
 
   const pageSize = 3;

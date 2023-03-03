@@ -5,9 +5,8 @@ import MilitaryClassImg from '../../assets/MilitaryProfile.png';
 import ComputerScienceImg from '../../assets/ComuterScience.png';
 import GraphicDesignImg from '../../assets/GraphicDesign.png';
 import LogisticImg from '../../assets/LogisticProfile.png';
-import { useContext, useEffect, useRef } from 'react';
+import { useRef } from 'react';
 import Profiles, { profiles } from '../../Components/Profiles/Profiles';
-import { NavbarContext } from '../../Contexts/NavbarContext';
 import useCloseMenu from '../../Hooks/useCloseMenu';
 
 const Home = () => {
