@@ -8,6 +8,7 @@ namespace HighSchoolAPI.Controllers;
 
 [ApiController]
 [Route("/announcements")]
+[Authorize(Policy = "AuthAdmin")]
 public class AnnouncementController : ControllerBase
 {
     private readonly IAnnouncementService _service;
@@ -19,7 +20,6 @@ public class AnnouncementController : ControllerBase
 
     [HttpPost]
     [Route("createAnnouncement")]
-    [Authorize(Roles = "Admin")]
     public async Task<ActionResult> CreateAnnouncementWithoutImages([FromBody] CreateAnnouncementDto dto)
     {
         await _service.CreateAnnouncementWithoutImages(dto);
@@ -28,7 +28,6 @@ public class AnnouncementController : ControllerBase
 
     [HttpPost]
     [Route("addThumbnail/{id:int}")]
-    [Authorize(Roles = "Admin")]
     public async Task<ActionResult> AddThumbnail([FromForm] IFormFile file, [FromRoute] int id)
     {
         await _service.AddThumbnail(file, id);
@@ -37,7 +36,6 @@ public class AnnouncementController : ControllerBase
 
     [HttpPost]
     [Route("addImage/{id:int}")]
-    [Authorize(Roles = "Admin")]
     public async Task<ActionResult> AddImage([FromForm] IFormFile file, [FromRoute] int id)
     {
         await _service.AddImage(file, id);
@@ -46,7 +44,6 @@ public class AnnouncementController : ControllerBase
 
     [HttpDelete]
     [Route("/deleteAnnouncement/{announcementTitle}")]
-    [Authorize(Roles = "Admin")]
     public async Task<ActionResult> DeleteAnnouncement([FromRoute] string announcementTitle)
     {
         await _service.DeleteAnnouncement(announcementTitle);

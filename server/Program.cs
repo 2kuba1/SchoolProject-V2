@@ -73,7 +73,14 @@ builder.Services.AddAuthentication(options =>
         IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(authSettings.JwtKey))
     };
 });
-
+builder.Services.AddAuthorization(options =>
+{
+    options.AddPolicy("AuthUser", b => b.RequireClaim("Role", "User", "Admin"));
+});
+builder.Services.AddAuthorization(options =>
+{
+    options.AddPolicy("AuthAdmin", b => b.RequireClaim("Role", "Admin"));
+});
 builder.Services.AddScoped<IAccountService, AccountService>();
 builder.Services.AddSingleton(authSettings);
 builder.Services.AddScoped<IUserContextService, UserContextService>();

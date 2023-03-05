@@ -34,7 +34,7 @@ public class AccountController : ControllerBase
 
     [HttpGet]
     [Route("getApplicationStatus")]
-    [Authorize(Roles = "User")]
+    [Authorize(Policy = "AuthUser")]
     public async Task<ActionResult<string>> GetApplicationStatus()
     {
         var response = await _service.GetApplicationStatus();
@@ -43,7 +43,7 @@ public class AccountController : ControllerBase
 
     [HttpGet]
     [Route("getUserData")]
-    [Authorize(Roles = "User,Admin")]
+    [Authorize(Policy = "AuthUser")]
     public ActionResult<UserData> GetUserData()
     {
         var response = _service.GetUserData();

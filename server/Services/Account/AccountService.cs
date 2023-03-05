@@ -66,7 +66,7 @@ public class AccountService : IAccountService
             new Claim("FirstName", $"{user.FirstName}"),
             new Claim("LastName", $"{user.LastName}"),
             new Claim("Email", $"{user.Email}"),
-            new Claim(ClaimTypes.Role, $"{user.Role.Name}")
+            new Claim("Role", $"{user.Role.Name}")
         };
 
         var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_authSettings.JwtKey));
