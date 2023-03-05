@@ -6,11 +6,6 @@
       <change beforePath="$PROJECT_DIR$/../client/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../client/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../client/src/Pages/Login/Login.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/Pages/Login/Login.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.HighSchoolAPI/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.HighSchoolAPI/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Controllers/AccountController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Controllers/AccountController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Controllers/AnnouncementController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Controllers/AnnouncementController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Controllers/ApplicationController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Controllers/ApplicationController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Program.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Services/Account/AccountService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Services/Account/AccountService.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -116,6 +111,8 @@
       <workItem from="1677883601592" duration="1884000" />
       <workItem from="1677951960873" duration="1172000" />
       <workItem from="1678013077224" duration="907000" />
+      <workItem from="1678021265462" duration="234000" />
+      <workItem from="1678024970677" duration="27000" />
     </task>
     <servers />
   </component>

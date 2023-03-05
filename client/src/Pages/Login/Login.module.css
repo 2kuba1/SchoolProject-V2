@@ -1,0 +1,42 @@
+.Login {
+  height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.Login h1 {
+  font-size: 4.8rem;
+}
+
+.Login form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 30rem;
+}
+
+.Login form input {
+  height: 3rem;
+  background-color: #2b2b2b;
+  border: none;
+  color: #d3d3d3;
+  border-radius: 1rem;
+  font-size: 1.2rem;
+  padding-left: 0.5rem;
+}
+
+.Login p {
+  font-weight: bold;
+}
+
+.Success {
+  color: green;
+  font-size: 1.6rem;
+}
+
+.Error {
+  color: crimson;
+  font-size: 1.6rem;
+}
