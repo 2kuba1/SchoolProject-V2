@@ -12,6 +12,8 @@ const Register = () => {
   const password = useRef<HTMLInputElement>(null);
   const confirmPassword = useRef<HTMLInputElement>(null);
 
+  const form = useRef<HTMLFormElement>(null);
+
   const [firstNameError, setFirsNameError] = useState(false);
   const [lastNameError, setLastNameError] = useState(false);
   const [emailError, setEmailError] = useState(false);
@@ -103,12 +105,13 @@ const Register = () => {
         setEmailIsAlreadyTakenError(true);
       }
     }
+    form.current?.reset();
   };
 
   return (
     <div className={styles.Register}>
       <h1>Register</h1>
-      <form onSubmit={handleSubmit}>
+      <form ref={form} onSubmit={handleSubmit}>
         <div className={styles.Names}>
           <input ref={firstName} type='text' placeholder='First Name' />
           <input ref={lastName} type='text' placeholder='Last Name' />
