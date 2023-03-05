@@ -3,18 +3,13 @@ import axios from 'axios';
 import jwtDecode from 'jwt-decode';
 import { FormEvent, useRef, useState } from 'react';
 import useCloseMenu from '../../Hooks/useCloseMenu';
-
-interface User {
-  Id: string;
-  FirstName: string;
-  LastName: string;
-  Email: string;
-  Role: string;
-  exp: number;
-}
+import { User } from '../../Contexts/UserContext';
+import useRelog from '../../Hooks/useRelog';
 
 const Login = () => {
   useCloseMenu();
+  useRelog();
+
   const email = useRef<HTMLInputElement>(null);
   const password = useRef<HTMLInputElement>(null);
   const form = useRef<HTMLFormElement>(null);
@@ -37,6 +32,7 @@ const Login = () => {
       const decoded = jwtDecode<User>(response.data);
       console.log(decoded);
       setLoginSucceed(true);
+      localStorage.setItem('token', response.data);
     } catch (error) {
       setError(true);
     }
