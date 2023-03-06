@@ -75,3 +75,10 @@
   align-items: center;
   border-radius: 1rem;
 }
+
+.Error {
+  color: crimson;
+  font-size: 2.4rem;
+  padding: 0;
+  margin: 0;
+}

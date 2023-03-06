@@ -11,7 +11,6 @@ const useRelog = () => {
     if (token) {
       const decoded = jwtDecode<User>(token);
       const date = new Date();
-      console.log(decoded);
       if (date.getMilliseconds() < date.getMilliseconds() + decoded.exp) {
         if (
           (User.Email && User.FirstName && User.Id && User.Role != '') ||
