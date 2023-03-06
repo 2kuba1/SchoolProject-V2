@@ -1,8 +1,10 @@
 import styles from './Register.module.css';
 import useCloseMenu from '../../Hooks/useCloseMenu';
 import { z } from 'zod';
-import { FormEvent, useRef, useState } from 'react';
+import { FormEvent, useContext, useRef, useState } from 'react';
 import axios from 'axios';
+import useRelog from '../../Hooks/useRelog';
+import { UserContext } from '../../Contexts/UserContext';
 
 const Register = () => {
   useCloseMenu();
@@ -30,7 +32,6 @@ const Register = () => {
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-
     setFirsNameError(false);
     setLastNameError(false);
     setEmailError(false);

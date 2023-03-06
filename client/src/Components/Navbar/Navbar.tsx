@@ -8,7 +8,6 @@ import { NavbarContext } from '../../Contexts/NavbarContext';
 
 const Navbar = () => {
   const { IsShown, SetIsShown } = useContext(NavbarContext);
-
   const handleClick = () => {
     SetIsShown({ isShown: !IsShown.isShown });
   };

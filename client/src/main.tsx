@@ -4,13 +4,16 @@ import './index.css';
 import { BrowserRouter } from 'react-router-dom';
 import NavbarProvider from './Contexts/NavbarContext';
 import UserProvider from './Contexts/UserContext';
+import IsLoggedProvider from './Contexts/IsLoggedContext';
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
-  <BrowserRouter>
-    <UserProvider>
-      <NavbarProvider>
-        <App />
-      </NavbarProvider>
-    </UserProvider>
-  </BrowserRouter>
+  <IsLoggedProvider>
+    <BrowserRouter>
+      <UserProvider>
+        <NavbarProvider>
+          <App />
+        </NavbarProvider>
+      </UserProvider>
+    </BrowserRouter>
+  </IsLoggedProvider>
 );

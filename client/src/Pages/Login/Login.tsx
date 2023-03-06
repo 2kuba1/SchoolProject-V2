@@ -1,7 +1,7 @@
 import styles from './Login.module.css';
 import axios from 'axios';
 import jwtDecode from 'jwt-decode';
-import { FormEvent, useRef, useState } from 'react';
+import { FormEvent, useContext, useRef, useState } from 'react';
 import useCloseMenu from '../../Hooks/useCloseMenu';
 import { User } from '../../Contexts/UserContext';
 import useRelog from '../../Hooks/useRelog';
@@ -9,7 +9,6 @@ import useRelog from '../../Hooks/useRelog';
 const Login = () => {
   useCloseMenu();
   useRelog();
-
   const email = useRef<HTMLInputElement>(null);
   const password = useRef<HTMLInputElement>(null);
   const form = useRef<HTMLFormElement>(null);
