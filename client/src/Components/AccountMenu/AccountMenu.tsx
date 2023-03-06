@@ -5,6 +5,7 @@ import { useContext } from 'react';
 import useRelog from '../../Hooks/useRelog';
 import { IsLoggedContext } from '../../Contexts/IsLoggedContext';
 import { UserContext } from '../../Contexts/UserContext';
+import useCloseMenu from '../../Hooks/useCloseMenu';
 
 const AccountMenu = () => {
   useRelog();
@@ -25,6 +26,7 @@ const AccountMenu = () => {
     });
     localStorage.removeItem('token');
     window.location.reload();
+    useCloseMenu();
   };
 
   return (
@@ -32,7 +34,7 @@ const AccountMenu = () => {
       <div className={styles.Links}>
         {IsLogged.isLogged ? (
           <>
-            <Link to=''>
+            <Link to='accountDetails'>
               <img
                 className={styles.AccountImg}
                 src={AccountImage}

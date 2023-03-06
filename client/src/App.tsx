@@ -11,8 +11,6 @@ import AdminPanel from './Pages/AdminPanel/AdminPanel';
 import Navbar from './Components/Navbar/Navbar';
 import Footer from './Components/Footer/Footer';
 import NotFound from './Pages/NotFound/NotFound';
-import NavbarProvider from './Contexts/NavbarContext';
-import useCloseMenu from './Hooks/useCloseMenu';
 
 function App() {
   return (
