@@ -24,7 +24,6 @@ const Application = () => {
   const [emailError, setEmailError] = useState(false);
 
   const [error, setError] = useState(false);
-  //todo validations
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setNamesError(false);

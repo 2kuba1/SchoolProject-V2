@@ -11,6 +11,7 @@ import AdminPanel from './Pages/AdminPanel/AdminPanel';
 import Navbar from './Components/Navbar/Navbar';
 import Footer from './Components/Footer/Footer';
 import NotFound from './Pages/NotFound/NotFound';
+import ProtectedRoutes from './Utils/ProtectedRoutes';
 
 function App() {
   return (
@@ -24,8 +25,10 @@ function App() {
         <Route path='/announcement/:id' element={<Article />} />
         <Route path='/login' element={<Login />} />
         <Route path='/register' element={<Register />} />
-        <Route path='/accountDetails' element={<AccountDetails />} />
-        <Route path='/adminPanel' element={<AdminPanel />} />
+        <Route element={<ProtectedRoutes />}>
+          <Route path='/accountDetails' element={<AccountDetails />} />
+          <Route path='/adminPanel' element={<AdminPanel />} />
+        </Route>
         <Route path='*' element={<NotFound />} />
       </Routes>
       <Footer />
