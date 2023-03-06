@@ -17,7 +17,7 @@ public class CreateApplicationValidator : AbstractValidator<CreateApplicationDto
             .EmailAddress();
 
         RuleFor(x => x.DateOfBirth)
-            .Length(9)
+            .Length(10)
             .NotEmpty();
 
         RuleFor(x => x.FirstAndLastName)

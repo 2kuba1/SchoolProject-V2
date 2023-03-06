@@ -2,10 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1e1b466e-14ce-4082-a076-2201cf6c5601" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../client/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/../client/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../client/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/src/Pages/Login/Login.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/Pages/Login/Login.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.HighSchoolAPI/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.HighSchoolAPI/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/Pages/Application/Application.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/Pages/Application/Application.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controllers/ApplicationController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Controllers/ApplicationController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Database/Entities/Application.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Database/Entities/Application.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Models/CreateApplicationDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Models/CreateApplicationDto.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Validators/CreateApplicationValidator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Validators/CreateApplicationValidator.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -113,6 +114,7 @@
       <workItem from="1678013077224" duration="907000" />
       <workItem from="1678021265462" duration="234000" />
       <workItem from="1678024970677" duration="27000" />
+      <workItem from="1678108063081" duration="43000" />
     </task>
     <servers />
   </component>

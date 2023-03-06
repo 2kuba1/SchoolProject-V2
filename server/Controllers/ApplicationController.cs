@@ -8,7 +8,6 @@ namespace HighSchoolAPI.Controllers;
 
 [Route("/api/application")]
 [ApiController]
-[Authorize(Policy = "AuthAdmin")]
 public class ApplicationController : ControllerBase
 {
     private readonly IApplicationService _service;
@@ -29,6 +28,7 @@ public class ApplicationController : ControllerBase
     
     [HttpPost]
     [Route("approveApplication")]
+    [Authorize(Policy = "AuthAdmin")]
     public async Task<ActionResult> ApproveApplication([FromQuery]int id)
     {
         await _service.ApproveApplication(id);
@@ -37,6 +37,7 @@ public class ApplicationController : ControllerBase
     
     [HttpPost]
     [Route("rejectApplication")]
+    [Authorize(Policy = "AuthAdmin")]
     public async Task<ActionResult> RejectApplication([FromQuery]int id)
     {
         await _service.RejectApplication(id);
@@ -45,6 +46,7 @@ public class ApplicationController : ControllerBase
 
     [HttpGet]
     [Route("getLastApplication")]
+    [Authorize(Policy = "AuthAdmin")]
     public async Task<Application> GetLastApplication()
     {
         var lastApplication = await _service.GetLastApplication();
