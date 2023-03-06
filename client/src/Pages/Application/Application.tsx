@@ -5,11 +5,13 @@ import { IsLoggedContext } from '../../Contexts/IsLoggedContext';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 import useRelog from '../../Hooks/useRelog';
+import { UserContext } from '../../Contexts/UserContext';
 
 const Application = () => {
   useCloseMenu();
   useRelog();
   const { IsLogged } = useContext(IsLoggedContext);
+  const { User } = useContext(UserContext);
 
   const names = useRef<HTMLInputElement>(null);
   const age = useRef<HTMLInputElement>(null);
@@ -47,13 +49,17 @@ const Application = () => {
           <h1>School Application</h1>
           <form onSubmit={handleSubmit}>
             <label>First and last name</label>
-            <input ref={names} type='text' />
+            <input
+              ref={names}
+              type='text'
+              placeholder={`${User.FirstName} ${User.LastName}`}
+            />
             <label>Age</label>
-            <input ref={age} type='number' />
+            <input ref={age} type='number' placeholder='Age' />
             <label>Date of Birth</label>
             <input ref={date} type='date' />
             <label>Contact Email</label>
-            <input ref={email} type='email' />
+            <input ref={email} type='email' placeholder={User.Email} />
             <input type='submit' value='Send' />
           </form>
           {error && <p className={styles.Error}>You have already applied</p>}

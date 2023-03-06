@@ -11,27 +11,23 @@ const useRelog = () => {
     if (token) {
       const decoded = jwtDecode<User>(token);
       const date = new Date();
-      if (date.getMilliseconds() < date.getMilliseconds() + decoded.exp) {
-        if (
-          (User.Email && User.FirstName && User.Id && User.Role != '') ||
-          null
-        )
-          SetUser({
-            Email: decoded.Email,
-            exp: decoded.exp + date.getMilliseconds(),
-            FirstName: decoded.FirstName,
-            LastName: decoded.LastName,
-            Id: decoded.Id,
-            Role: decoded.Role,
-          });
+      if (date.getMilliseconds() + decoded.exp > date.getMilliseconds()) {
+        SetUser({
+          Email: decoded.Email,
+          exp: decoded.exp + date.getMilliseconds(),
+          FirstName: decoded.FirstName,
+          LastName: decoded.LastName,
+          Id: decoded.Id,
+          Role: decoded.Role,
+        });
         SetIsLogged({
           isLogged: true,
         });
-      } else {
-        SetIsLogged({
-          isLogged: false,
-        });
       }
+    } else {
+      SetIsLogged({
+        isLogged: false,
+      });
     }
   }, []);
 };

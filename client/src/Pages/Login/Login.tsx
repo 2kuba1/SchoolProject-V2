@@ -1,7 +1,7 @@
 import styles from './Login.module.css';
 import axios from 'axios';
 import jwtDecode from 'jwt-decode';
-import { FormEvent, useContext, useRef, useState } from 'react';
+import { FormEvent, useRef, useState } from 'react';
 import useCloseMenu from '../../Hooks/useCloseMenu';
 import { User } from '../../Contexts/UserContext';
 import useRelog from '../../Hooks/useRelog';
