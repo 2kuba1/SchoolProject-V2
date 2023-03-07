@@ -27,6 +27,10 @@
   padding-left: 0.5rem;
 }
 
+.Login form input[type='submit'] {
+  cursor: pointer;
+}
+
 .Login p {
   font-weight: bold;
 }
