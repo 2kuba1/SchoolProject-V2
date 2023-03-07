@@ -1,0 +1,51 @@
+.AccountDetails {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: calc(100vh - 4.8rem - 1.6rem - 5rem);
+  position: relative;
+  top: 5rem;
+}
+
+.AccountDetails img {
+  height: 15rem;
+  width: 15rem;
+  filter: invert(46%) sepia(91%) saturate(440%) hue-rotate(66deg)
+    brightness(94%) contrast(80%);
+}
+
+.AccountDetails {
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+
+.ApplicationStatus {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  background-color: #2b2b2b;
+  height: 150%;
+  width: 50rem;
+  color: #d3d3d3;
+}
+
+.Unknown {
+  font-size: 2.4rem;
+  font-weight: bold;
+  color: #626363;
+}
+
+.Approved {
+  font-size: 2.4rem;
+  font-weight: bold;
+  color: #62cd32;
+}
+
+.Rejected {
+  font-size: 2.4rem;
+  font-weight: bold;
+  color: crimson;
+}

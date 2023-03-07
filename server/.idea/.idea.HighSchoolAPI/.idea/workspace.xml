@@ -2,11 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1e1b466e-14ce-4082-a076-2201cf6c5601" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../client/src/Pages/Application/Application.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/Pages/Application/Application.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Controllers/ApplicationController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Controllers/ApplicationController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Database/Entities/Application.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Database/Entities/Application.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Models/CreateApplicationDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Models/CreateApplicationDto.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Validators/CreateApplicationValidator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Validators/CreateApplicationValidator.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.HighSchoolAPI/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.HighSchoolAPI/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,22 +17,30 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
+  <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
   <component name="ProjectId" id="2M2kyTxvKqEn3TAaxgTBCiwDo7F" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.sourceCode.Azurite",
+    "vue.rearranger.settings.migration": "true"
+  },
+  "keyToStringList": {
+    "rider.external.source.directories": [
+      "C:\\Users\\2kuba1\\AppData\\Roaming\\JetBrains\\Rider2022.3\\resharper-host\\DecompilerCache",
+      "C:\\Users\\2kuba1\\AppData\\Roaming\\JetBrains\\Rider2022.3\\resharper-host\\SourcesCache",
+      "C:\\Users\\2kuba1\\AppData\\Local\\Symbols\\src"
+    ]
   }
-}</component>
+}]]></component>
   <component name="RunManager" selected=".NET Launch Settings Profile.HighSchoolAPI: http">
     <configuration name="HighSchoolAPI: IIS Express" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
       <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/HighSchoolAPI.csproj" />
@@ -115,6 +119,11 @@
       <workItem from="1678021265462" duration="234000" />
       <workItem from="1678024970677" duration="27000" />
       <workItem from="1678108063081" duration="43000" />
+      <workItem from="1678225393846" duration="540000" />
+      <workItem from="1678226294323" duration="303000" />
+      <workItem from="1678226610431" duration="29000" />
+      <workItem from="1678226652989" duration="42000" />
+      <workItem from="1678226710460" duration="565000" />
     </task>
     <servers />
   </component>
