@@ -11,7 +11,8 @@ import AdminPanel from './Pages/AdminPanel/AdminPanel';
 import Navbar from './Components/Navbar/Navbar';
 import Footer from './Components/Footer/Footer';
 import NotFound from './Pages/NotFound/NotFound';
-import ProtectedRoutes from './Utils/ProtectedRoutes';
+import ProtectedAdminRoutes from './Utils/Routes/ProtectedAdminRoutes';
+import ProtectedRoutes from './Utils/Routes/ProtectedRoutes';
 
 function App() {
   return (
@@ -27,6 +28,8 @@ function App() {
         <Route path='/register' element={<Register />} />
         <Route element={<ProtectedRoutes />}>
           <Route path='/accountDetails' element={<AccountDetails />} />
+        </Route>
+        <Route element={<ProtectedAdminRoutes />}>
           <Route path='/adminPanel' element={<AdminPanel />} />
         </Route>
         <Route path='*' element={<NotFound />} />
