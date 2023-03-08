@@ -1,10 +1,7 @@
 import styles from './Login.module.css';
 import axios from 'axios';
-import jwtDecode from 'jwt-decode';
 import { FormEvent, useRef, useState } from 'react';
 import useCloseMenu from '../../Hooks/useCloseMenu';
-import { User } from '../../Contexts/UserContext';
-import useRelog from '../../Hooks/useRelog';
 
 const Login = () => {
   const { closeMenu } = useCloseMenu();
@@ -27,8 +24,6 @@ const Login = () => {
         }
       );
 
-      const decoded = jwtDecode<User>(response.data);
-      console.log(decoded);
       setLoginSucceed(true);
       localStorage.setItem('token', response.data);
     } catch (error) {
