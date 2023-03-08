@@ -7,8 +7,7 @@ import { User } from '../../Contexts/UserContext';
 import useRelog from '../../Hooks/useRelog';
 
 const Login = () => {
-  useCloseMenu();
-  useRelog();
+  const { closeMenu } = useCloseMenu();
   const email = useRef<HTMLInputElement>(null);
   const password = useRef<HTMLInputElement>(null);
   const form = useRef<HTMLFormElement>(null);
@@ -35,6 +34,7 @@ const Login = () => {
     } catch (error) {
       setError(true);
     }
+    closeMenu();
     form.current?.reset();
   };
 
