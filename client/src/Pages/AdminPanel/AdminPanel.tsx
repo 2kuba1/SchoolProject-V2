@@ -1,11 +1,11 @@
 import styles from './AdminPanel.module.css';
 import useCloseMenu from '../../Hooks/useCloseMenu';
 import ExpandMoreButton from './ExpandMoreButton/ExpandMoreButton';
-import CreateAnnouncement from './AdminPanelActions/CreateAnnouncement/CreateAnnouncement';
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import DeleteAnnounecement from './AdminPanelActions/DeleteAnnouncementAction/DeleteAnnouncement';
 import CheckApplications from './AdminPanelActions/CheckApplicationsAction/CheckApplications';
+import CreateAnnouncement from './AdminPanelActions/CreateAnnouncementAction/CreateAnnouncement';
 
 const AdminPanel = () => {
   useCloseMenu();
