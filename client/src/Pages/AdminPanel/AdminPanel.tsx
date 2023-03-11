@@ -23,21 +23,17 @@ const AdminPanel = () => {
   const [checkApplicationsExpand, setCheckApplicationsExpand] = useState(false);
 
   const resizePage = (isOpened: boolean, height: number) => {
-    if (isOpened) {
-      const indexOfPx = pageHeight.indexOf('px');
-      const newHeight = Number(pageHeight.slice(0, indexOfPx)) - height;
-      document.documentElement.style.setProperty(
-        '--AdminPanelHeight',
-        newHeight + 'px'
-      );
-    } else {
-      const indexOfPx = pageHeight.indexOf('px');
-      const newHeight = Number(pageHeight.slice(0, indexOfPx)) + height;
-      document.documentElement.style.setProperty(
-        '--AdminPanelHeight',
-        newHeight + 'px'
-      );
-    }
+    const indexOfPx = pageHeight.indexOf('px');
+    let newHeight: number;
+
+    isOpened
+      ? (newHeight = Number(pageHeight.slice(0, indexOfPx)) - height)
+      : (newHeight = Number(pageHeight.slice(0, indexOfPx)) + height);
+
+    document.documentElement.style.setProperty(
+      '--AdminPanelHeight',
+      newHeight + 'px'
+    );
   };
 
   return (
