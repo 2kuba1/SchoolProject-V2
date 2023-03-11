@@ -13,7 +13,7 @@ const Navbar = () => {
   };
 
   return (
-    <div>
+    <>
       <nav className={styles.nav}>
         <NavLink to='/'>
           <img className={styles.Logo} src={Logo} alt='Logo' />
@@ -55,7 +55,7 @@ const Navbar = () => {
         </ul>
       </nav>
       <div>{IsShown.isShown && <AccountMenu />}</div>
-    </div>
+    </>
   );
 };
 
