@@ -2,15 +2,15 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
   width: 100%;
-  height: calc(100vh - 4.8rem - 1.6rem - 5rem);
+  height: var(--AdminPanelHeight);
 }
 
 .AdminPaenl h1 {
   font-size: 4.8rem;
   color: #399f2e;
-  margin-bottom: 2rem;
+  padding: 0;
+  margin-bottom: 0;
 }
 
 .Action {
@@ -45,4 +45,17 @@ textarea {
 
 .Action img {
   cursor: pointer;
+}
+
+.Visible {
+  display: block;
+}
+
+.Hidden {
+  display: none;
+}
+
+.ExpandMoreButton {
+  position: relative;
+  margin-bottom: 2rem;
 }

@@ -1,0 +1,32 @@
+.DeleteAnnounecement {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 20vh;
+}
+
+.DeleteAnnounecement label {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+}
+
+.DeleteAnnounecement input {
+  border: none;
+  height: 2rem;
+  width: 20rem;
+  margin-bottom: 1.5rem;
+}
+
+.DeleteAnnounecement button {
+  width: 10rem;
+  height: 3rem;
+  border: none;
+  border-radius: 0.5rem;
+  background-color: #ff0000;
+  color: #fff;
+  font-size: 1.2rem;
+  font-weight: 600;
+  cursor: pointer;
+}
