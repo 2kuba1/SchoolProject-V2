@@ -44,7 +44,7 @@ const AdminPanel = () => {
         <div
           onClick={() => {
             setCreateAnnouncementExpand(!createAnnouncementExpand);
-            resizePage(createAnnouncementExpand, 850);
+            resizePage(createAnnouncementExpand, 900);
           }}
           className={styles.ExpandMoreButton}
         >
@@ -52,7 +52,7 @@ const AdminPanel = () => {
         </div>
         <motion.div
           animate={{
-            height: createAnnouncementExpand ? 850 : 0,
+            height: createAnnouncementExpand ? 900 : 0,
             opacity: createAnnouncementExpand ? 1 : 0,
           }}
         >
