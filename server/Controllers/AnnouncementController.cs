@@ -20,10 +20,10 @@ public class AnnouncementController : ControllerBase
     [HttpPost]
     [Route("createAnnouncement")]
     [Authorize(Policy = "AuthAdmin")]
-    public async Task<ActionResult> CreateAnnouncementWithoutImages([FromBody] CreateAnnouncementDto dto)
+    public async Task<ActionResult<int>> CreateAnnouncementWithoutImages([FromBody] CreateAnnouncementDto dto)
     {
-        await _service.CreateAnnouncementWithoutImages(dto);
-        return Ok();
+        var id = await _service.CreateAnnouncementWithoutImages(dto);
+        return Ok(id);
     }
 
     [HttpPost]

@@ -24,7 +24,7 @@ public class AnnouncementService : IAnnouncementService
         _configuration = configuration;
     }
     
-    public async Task CreateAnnouncementWithoutImages(CreateAnnouncementDto dto)
+    public async Task<int> CreateAnnouncementWithoutImages(CreateAnnouncementDto dto)
     {
         var announcement = new Database.Entities.Announcement()
         {
@@ -36,6 +36,7 @@ public class AnnouncementService : IAnnouncementService
 
         await _dbContext.Announcements.AddAsync(announcement);
         await _dbContext.SaveChangesAsync();
+        return _dbContext.Announcements.Max(x => x.Id);
     }
 
     public async Task AddThumbnail(IFormFile file, int id)
