@@ -45,11 +45,11 @@ public class AnnouncementController : ControllerBase
     }
 
     [HttpDelete]
-    [Route("/deleteAnnouncement/{announcementTitle}")]
+    [Route("/deleteAnnouncement/{id:int}")]
     [Authorize(Policy = "AuthAdmin")]
-    public async Task<ActionResult> DeleteAnnouncement([FromRoute] string announcementTitle)
+    public async Task<ActionResult> DeleteAnnouncement([FromRoute] int id)
     {
-        await _service.DeleteAnnouncement(announcementTitle);
+        await _service.DeleteAnnouncement(id);
         return Ok();
     }
 

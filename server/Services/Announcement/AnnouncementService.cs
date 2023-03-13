@@ -125,10 +125,9 @@ public class AnnouncementService : IAnnouncementService
         await _dbContext.SaveChangesAsync();
     }
 
-    public async Task DeleteAnnouncement(string announcementTitle)
+    public async Task DeleteAnnouncement(int id)
     {
-        var announcement = await _dbContext.Announcements.FirstOrDefaultAsync(s => announcementTitle == null || (
-            s.Title.ToLower().Contains(announcementTitle.ToLower())));
+        var announcement = await _dbContext.Announcements.FirstOrDefaultAsync(x => x.Id == id);
             
         if (announcement is null)
         {
