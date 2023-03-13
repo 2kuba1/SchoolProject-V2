@@ -88,7 +88,7 @@ builder.Services.AddScoped<IAnnouncementService, AnnouncementService>();
 builder.Services.AddHttpContextAccessor();
 builder.Services.AddAutoMapper(typeof(Program).Assembly);
 builder.Services.AddScoped<IApplicationService, ApplicationService>();
-builder.Services.AddScoped<ErrorHandlingMiddleware>();
+//builder.Services.AddScoped<ErrorHandlingMiddleware>();
 builder.Services.AddFluentValidation(fv => fv.AutomaticValidationEnabled = true);
 builder.Services.AddScoped<IValidator<RegisterUserDto>, RegisterValidator>();
 builder.Services.AddScoped<IValidator<LoginDto>, LoginValidator>();
@@ -115,7 +115,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 app.UseCors("ui");
-app.UseMiddleware<ErrorHandlingMiddleware>();
+//app.UseMiddleware<ErrorHandlingMiddleware>();
 app.UseStaticFiles();
 app.UseAuthentication();
 app.UseCookiePolicy();

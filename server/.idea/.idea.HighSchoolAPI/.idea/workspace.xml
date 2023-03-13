@@ -5,6 +5,7 @@
       <change beforePath="$PROJECT_DIR$/../client/src/Pages/AdminPanel/AdminPanelActions/DeleteAnnouncementAction/DeleteAnnouncement.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/Pages/AdminPanel/AdminPanelActions/DeleteAnnouncementAction/DeleteAnnouncement.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.HighSchoolAPI/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.HighSchoolAPI/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Controllers/AnnouncementController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Controllers/AnnouncementController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Program.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Services/Announcement/AnnouncementService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Services/Announcement/AnnouncementService.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Services/Announcement/IAnnouncementService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Services/Announcement/IAnnouncementService.cs" afterDir="false" />
     </list>
@@ -129,6 +130,7 @@
       <workItem from="1678226652989" duration="42000" />
       <workItem from="1678226710460" duration="565000" />
       <workItem from="1678719920571" duration="275000" />
+      <workItem from="1678720273052" duration="3352000" />
     </task>
     <servers />
   </component>

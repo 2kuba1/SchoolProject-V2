@@ -189,6 +189,13 @@ public class AnnouncementService : IAnnouncementService
         return results;
     }
 
+    public IEnumerable<GetAnnouncementsDto> GetAllAnnouncements()
+    {
+        var announcements = _dbContext.Announcements.Include(x =>x.Thumbnail).ToList();
+        var mappedValues = _mapper.Map<List<GetAnnouncementsDto>>(announcements);
+        return mappedValues;
+    }
+
     public async Task<GetAnnouncementBodyDto> GetAnnouncementBody(int id)
     {
         var announcement = await _dbContext.Announcements.Include(x => x.Thumbnail).Include(x => x.Images).FirstOrDefaultAsync(x => x.Id == id);

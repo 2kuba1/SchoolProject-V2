@@ -10,5 +10,6 @@ public interface IAnnouncementService
     Task DeleteAnnouncement(int id);
     PagedResult<GetAnnouncementsDto> GetAnnouncements(int pageNumber, int pageSize);
     Task<GetAnnouncementBodyDto> GetAnnouncementBody(int id);
+    IEnumerable<GetAnnouncementsDto> GetAllAnnouncements();
 
 }

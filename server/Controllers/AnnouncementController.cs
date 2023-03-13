@@ -26,6 +26,14 @@ public class AnnouncementController : ControllerBase
         return Ok(id);
     }
 
+    [HttpGet]
+    [Route("getAll")]
+    public IEnumerable<GetAnnouncementsDto> GetAllAnnouncements()
+    {
+        var announcements = _service.GetAllAnnouncements();
+        return announcements;
+    }
+
     [HttpPost]
     [Route("addThumbnail/{id:int}")]
     [Authorize(Policy = "AuthAdmin")]
