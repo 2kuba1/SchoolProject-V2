@@ -18,6 +18,8 @@
   align-items: center;
   width: 50rem;
   margin-bottom: 1rem;
+  background-color: #399f2e;
+  position: relative;
 }
 
 .Announcement img {
@@ -31,4 +33,22 @@
   word-wrap: break-word;
   max-width: 50%;
   text-align: center;
+}
+
+.DeleteButton {
+  margin-right: 2rem;
+  border-radius: 0.2rem;
+  width: 3rem;
+  height: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  right: 0;
+  top: 4rem;
+}
+
+.DeleteButton img {
+  height: 2rem;
+  width: 2rem;
 }
