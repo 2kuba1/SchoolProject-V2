@@ -1,32 +1,34 @@
 .DeleteAnnounecement {
   display: flex;
-  justify-content: center;
   align-items: center;
   flex-direction: column;
+  justify-content: flex-start;
   height: 20vh;
+  overflow: auto;
 }
 
-.DeleteAnnounecement label {
-  font-size: 1.5rem;
-  font-weight: 600;
-  margin-bottom: 1.5rem;
+.GetAllAnnouncements {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.DeleteAnnounecement input {
-  border: none;
-  height: 2rem;
+.Announcement {
+  display: flex;
+  align-items: center;
+  width: 50rem;
+  margin-bottom: 1rem;
+}
+
+.Announcement img {
+  height: 10rem;
   width: 20rem;
-  margin-bottom: 1.5rem;
 }
 
-.DeleteAnnounecement button {
-  width: 10rem;
-  height: 3rem;
-  border: none;
-  border-radius: 0.5rem;
-  background-color: #ff0000;
-  color: #fff;
-  font-size: 1.2rem;
-  font-weight: 600;
-  cursor: pointer;
+.Announcement p {
+  font-size: 1.6rem;
+  text-indent: 1rem;
+  word-wrap: break-word;
+  max-width: 50%;
+  text-align: center;
 }
