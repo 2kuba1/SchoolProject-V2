@@ -79,7 +79,7 @@ public class ApplicationService : IApplicationService
 
     public async Task<Database.Entities.Application> GetLastApplication()
     {
-        var lastApplication = await _dbContext.Applications.OrderByDescending(i => i.Id).FirstOrDefaultAsync();
+        var lastApplication = await _dbContext.Applications.LastOrDefaultAsync();
 
         if (lastApplication is null)
         {
