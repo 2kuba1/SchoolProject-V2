@@ -5,15 +5,7 @@ import {
   SetStateAction,
   useState,
 } from 'react';
-
-export type User = {
-  Id: string;
-  FirstName: string;
-  LastName: string;
-  Email: string;
-  Role: string;
-  exp: number;
-};
+import User from '../Types/User';
 
 export interface UserContextInterface {
   User: User;
