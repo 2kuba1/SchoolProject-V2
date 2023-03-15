@@ -3,8 +3,24 @@
   align-items: center;
   flex-direction: column;
   justify-content: flex-start;
-  height: 20vh;
+  height: 30vh;
   overflow: auto;
+}
+
+.DeleteAnnounecement::-webkit-scrollbar {
+  width: 15px;
+}
+
+.DeleteAnnounecement::-webkit-scrollbar-track {
+  background: #2b2b2b;
+}
+
+.DeleteAnnounecement::-webkit-scrollbar-thumb {
+  background: #399f2e;
+}
+
+.DeleteAnnounecement::-webkit-scrollbar-thumb:hover {
+  background: #399f2e;
 }
 
 .GetAllAnnouncements {
@@ -20,6 +36,8 @@
   margin-bottom: 1rem;
   background-color: #399f2e;
   position: relative;
+  border: 3px solid #2b2b2b;
+  margin-right: 1rem;
 }
 
 .Announcement img {

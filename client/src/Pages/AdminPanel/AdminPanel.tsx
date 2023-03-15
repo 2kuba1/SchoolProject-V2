@@ -70,7 +70,7 @@ const AdminPanel = () => {
         <div
           onClick={() => {
             setDeleteAnnouncementExpand(!deleteAnnouncementExpand);
-            resizePage(deleteAnnouncementExpand, 200);
+            resizePage(deleteAnnouncementExpand, 300);
           }}
           className={styles.ExpandMoreButton}
         >
@@ -78,7 +78,7 @@ const AdminPanel = () => {
         </div>
         <motion.div
           animate={{
-            height: deleteAnnouncementExpand ? 200 : 0,
+            height: deleteAnnouncementExpand ? 300 : 0,
             opacity: deleteAnnouncementExpand ? 1 : 0,
           }}
         >

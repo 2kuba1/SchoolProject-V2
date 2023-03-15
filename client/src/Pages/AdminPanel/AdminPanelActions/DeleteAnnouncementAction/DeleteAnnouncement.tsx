@@ -11,8 +11,6 @@ const DeleteAnnounecement = () => {
     method: 'GET',
   });
 
-  console.log(data);
-
   return (
     <div className={styles.DeleteAnnounecement}>
       <div>
