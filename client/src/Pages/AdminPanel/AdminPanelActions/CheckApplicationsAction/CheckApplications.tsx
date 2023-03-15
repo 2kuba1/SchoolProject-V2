@@ -105,7 +105,6 @@ const CheckApplications = () => {
           className={styles.Reject}
           onClick={() => {
             if (typeof data !== 'undefined') {
-              console.log(data.id);
               handleReject(data.id);
             }
           }}
@@ -116,7 +115,6 @@ const CheckApplications = () => {
           className={styles.Approve}
           onClick={() => {
             if (typeof data !== 'undefined') {
-              console.log(data.id);
               handleApprove(data.id);
             }
           }}
