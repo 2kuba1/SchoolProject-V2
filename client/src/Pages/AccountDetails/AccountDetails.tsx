@@ -35,20 +35,22 @@ const AccountDetails = () => {
         <img src={AccountImg} alt='Account image' />
         <h1>{`${User.FirstName} ${User.LastName}`}</h1>
         <div>
-          <div className={styles.ApplicationStatus}>
-            <h2>Status of application:</h2>
-            <p
-              className={
-                application === 'Approved'
-                  ? styles.Approved
-                  : application === 'Rejected'
-                  ? styles.Rejected
-                  : styles.Unknown
-              }
-            >
-              {application}
-            </p>
-          </div>
+          {User.Role === 'User' && (
+            <div className={styles.ApplicationStatus}>
+              <h2>Status of application:</h2>
+              <p
+                className={
+                  application === 'Approved'
+                    ? styles.Approved
+                    : application === 'Rejected'
+                    ? styles.Rejected
+                    : styles.Unknown
+                }
+              >
+                {application}
+              </p>
+            </div>
+          )}
         </div>
         {User.Role === 'Admin' && (
           <Link to='/adminPanel' className={styles.AdminPanel}>
