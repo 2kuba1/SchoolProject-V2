@@ -96,7 +96,7 @@ const AdminPanel = () => {
         <div
           onClick={() => {
             setCheckApplicationsExpand(!checkApplicationsExpand);
-            resizePage(checkApplicationsExpand, 500);
+            resizePage(checkApplicationsExpand, 550);
           }}
           className={styles.ExpandMoreButton}
         >
@@ -104,7 +104,7 @@ const AdminPanel = () => {
         </div>
         <motion.div
           animate={{
-            height: checkApplicationsExpand ? 500 : 0,
+            height: checkApplicationsExpand ? 550 : 0,
             opacity: checkApplicationsExpand ? 1 : 0,
           }}
         >

@@ -23,6 +23,9 @@
   background-color: #f2f2f2;
   padding-left: 1rem;
   margin-bottom: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .CheckApplications button {
@@ -52,4 +55,9 @@
 
 .Approve {
   background-color: #6fcf97;
+}
+
+.Error {
+  color: crimson;
+  font-size: 1.5rem;
 }
