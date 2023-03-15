@@ -191,7 +191,7 @@ public class AnnouncementService : IAnnouncementService
 
     public IEnumerable<GetAnnouncementsDto> GetAllAnnouncements()
     {
-        var announcements = _dbContext.Announcements.Include(x =>x.Thumbnail).ToList();
+        var announcements = _dbContext.Announcements.Include(x =>x.Thumbnail).OrderByDescending(x => x.Id).ToList();
         var mappedValues = _mapper.Map<List<GetAnnouncementsDto>>(announcements);
         return mappedValues;
     }
