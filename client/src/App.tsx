@@ -8,16 +8,20 @@ import Login from './Pages/Login/Login';
 import Register from './Pages/Register/Register';
 import AccountDetails from './Pages/AccountDetails/AccountDetails';
 import AdminPanel from './Pages/AdminPanel/AdminPanel';
-import Navbar from './Components/Navbar/Navbar';
+import Navbar from './Components/Navbar/PcNavbar/Navbar';
 import Footer from './Components/Footer/Footer';
 import NotFound from './Pages/NotFound/NotFound';
 import ProtectedAdminRoutes from './Utils/Routes/ProtectedAdminRoutes';
 import ProtectedRoutes from './Utils/Routes/ProtectedRoutes';
+import { useContext } from 'react';
+import { IsMobileContext } from './Contexts/IsMobileContext';
+import MobileNavbar from './Components/Navbar/MobileNavbar/MobileNabar';
 
 function App() {
+  const { isMobile } = useContext(IsMobileContext);
   return (
     <>
-      <Navbar />
+      {isMobile ? <MobileNavbar /> : <Navbar />}
       <Routes>
         <Route index path='/' element={<Home />} />
         <Route path='/contact' element={<Contact />} />

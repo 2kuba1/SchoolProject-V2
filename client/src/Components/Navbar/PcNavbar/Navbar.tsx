@@ -1,10 +1,10 @@
-import Logo from '../../assets/Logo.svg';
-import Account_circle from '../../assets/Account_circle.svg';
+import Logo from '../../../assets/Logo.svg';
+import Account_circle from '../../../assets/Account_circle.svg';
 import styles from './Navbar.module.css';
 import { NavLink } from 'react-router-dom';
 import { useContext, useState } from 'react';
-import AccountMenu from '../AccountMenu/AccountMenu';
-import { NavbarContext } from '../../Contexts/NavbarContext';
+import AccountMenu from '../../AccountMenu/AccountMenu';
+import { NavbarContext } from '../../../Contexts/NavbarContext';
 
 const Navbar = () => {
   const { IsShown, SetIsShown } = useContext(NavbarContext);
@@ -14,7 +14,7 @@ const Navbar = () => {
 
   return (
     <>
-      <nav className={styles.nav}>
+      <nav className={styles.PcNav}>
         <NavLink to='/'>
           <img className={styles.Logo} src={Logo} alt='Logo' />
         </NavLink>

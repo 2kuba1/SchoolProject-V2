@@ -1,0 +1,44 @@
+.MobileNav {
+  position: relative;
+  top: 0;
+  width: 100%;
+  background-color: #2b2b2b;
+  height: 10vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.MobileNav img {
+  height: 75%;
+  margin-right: 1rem;
+  margin-left: 1rem;
+}
+
+.MobileMenu ul {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  background-color: #2b2b2b;
+  border: 1px solid #8b8585;
+}
+
+.MobileMenu li {
+  height: 100%;
+  width: 100%;
+  height: 5vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #8b8585;
+  font-size: 2vh;
+}
+
+.MobileMenu a {
+  text-decoration: underline;
+}

@@ -1,4 +1,4 @@
-nav {
+.PcNav {
   height: 4.8rem;
   display: flex;
   align-items: center;
@@ -9,7 +9,7 @@ nav {
 
   background-color: #2b2b2b;
 }
-nav ul {
+.PcNav ul {
   display: flex;
   flex-direction: row;
   gap: 3rem;
@@ -17,7 +17,7 @@ nav ul {
   height: 100%;
 }
 
-nav li {
+.PcNav li {
   list-style: none;
 }
 
@@ -29,8 +29,7 @@ nav li {
 }
 
 .NavLink {
-  position: relative;
-  right: 3rem;
+  gap: 3rem;
   display: flex;
   text-decoration: none;
   color: #ffffff;
