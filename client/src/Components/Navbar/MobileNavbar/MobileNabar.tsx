@@ -5,10 +5,12 @@ import { useContext, useState } from 'react';
 import { motion } from 'framer-motion';
 import { NavbarContext } from '../../../Contexts/NavbarContext';
 import { NavLink } from 'react-router-dom';
+import { IsLoggedContext } from '../../../Contexts/IsLoggedContext';
+import { UserContext } from '../../../Contexts/UserContext';
+import useRelog from '../../../Hooks/useRelog';
 
 const MobileNavbar = () => {
   const [isOpen, setIsOpen] = useState(false);
-
   const { IsShown, SetIsShown } = useContext(NavbarContext);
   const handleClick = () => {
     SetIsShown({ isShown: !IsShown.isShown });
@@ -51,6 +53,26 @@ const MobileNavbar = () => {
 };
 
 const MobileMenu = () => {
+  useRelog();
+  const { IsLogged, SetIsLogged } = useContext(IsLoggedContext);
+  const { SetUser } = useContext(UserContext);
+
+  const handleLogout = () => {
+    SetUser({
+      Email: '',
+      exp: 0,
+      FirstName: '',
+      Id: '',
+      LastName: '',
+      Role: '',
+    });
+    SetIsLogged({
+      isLogged: false,
+    });
+    localStorage.removeItem('token');
+    window.location.reload();
+  };
+
   return (
     <div className={styles.MobileMenu}>
       <ul>
@@ -79,6 +101,33 @@ const MobileMenu = () => {
             Contact
           </NavLink>
         </li>
+        {IsLogged.isLogged ? (
+          <>
+            <li>
+              <NavLink className={styles.NavLink} to='accountDetails'>
+                Account
+              </NavLink>
+            </li>
+            <li>
+              <div onClick={handleLogout}>
+                <p className={styles.Logout}>Logout</p>
+              </div>
+            </li>
+          </>
+        ) : (
+          <>
+            <li>
+              <NavLink className={styles.NavLink} to='login'>
+                Login
+              </NavLink>
+            </li>
+            <li>
+              <NavLink className={styles.NavLink} to='register'>
+                Register
+              </NavLink>
+            </li>
+          </>
+        )}
       </ul>
     </div>
   );

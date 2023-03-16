@@ -5,6 +5,7 @@
 .HomeBackground {
   background-size: cover;
   background-image: url('../../assets/HighSchool.png');
+  background-position: center center;
   height: 85vh;
   max-width: 100%;
   display: flex;

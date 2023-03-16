@@ -42,3 +42,10 @@
 .MobileMenu a {
   text-decoration: underline;
 }
+
+.Logout {
+  font-size: 2vh;
+  color: aliceblue;
+  cursor: pointer;
+  text-decoration: underline;
+}
