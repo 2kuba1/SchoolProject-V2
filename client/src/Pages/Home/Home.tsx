@@ -47,6 +47,13 @@ const Home = () => {
   return (
     <div className={styles.Home}>
       <div className={styles.HomeBackground}>
+        <div className={styles.HeroTitle}>
+          <div className={styles.SchoolTitle}>
+            <p>High </p>
+            <p className={styles.School}>School</p>
+          </div>
+          <p className={styles.UnderTitle}>We are educating future geniuses.</p>
+        </div>
         <img onClick={handleScrollDown} src={ExpandMore} alt='Expand more' />
       </div>
       <div className={styles.Container}>
