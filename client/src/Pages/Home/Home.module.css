@@ -2,10 +2,35 @@
   height: 350vh;
 }
 
+@media only screen and (max-height: 820px) {
+  .Home {
+    height: 380vh;
+  }
+}
+
 .HeroTitle {
   position: relative;
   left: -45vh;
   top: -10vh;
+}
+
+.UnderTitle {
+  font-size: 5vh;
+  color: #d3d3d3;
+  display: flex;
+  position: relative;
+  top: -15vh;
+}
+
+.SchoolTitle {
+  display: flex;
+  flex-direction: row;
+  font-size: 15vh;
+  color: #d3d3d3;
+}
+
+.School {
+  color: #399f2e;
 }
 
 @media only screen and (max-width: 1500px) {
@@ -30,25 +55,6 @@
     left: 0;
     right: 0;
   }
-}
-
-.UnderTitle {
-  font-size: 5vh;
-  color: #d3d3d3;
-  display: flex;
-  position: relative;
-  top: -15vh;
-}
-
-.SchoolTitle {
-  display: flex;
-  flex-direction: row;
-  font-size: 15vh;
-  color: #d3d3d3;
-}
-
-.School {
-  color: #399f2e;
 }
 
 .HomeBackground {
@@ -139,6 +145,28 @@
   padding: 1rem;
   font-size: 1.6rem;
   width: 50%;
+}
+
+@media only screen and (max-width: 1500px) {
+  .AboutContainer {
+    height: 20rem;
+    width: 22rem;
+    border: none;
+  }
+  .AboutText {
+    font-size: 0.7rem;
+    width: 100%;
+  }
+  .AboutImgParent {
+    height: 100%;
+    width: 100%;
+  }
+  .AboutImg {
+    width: 100%;
+  }
+  .HomeHeader::after {
+    width: 20rem;
+  }
 }
 
 .Profiles {

@@ -40,3 +40,17 @@
   border-radius: 2rem;
   display: flex;
 }
+
+@media only screen and (max-width: 1500px) {
+  .Profile {
+    width: 22rem;
+    height: 16rem;
+  }
+  .ClassHeader {
+    font-size: 0.9rem;
+  }
+
+  .ClassText {
+    font-size: 0.65rem;
+  }
+}
