@@ -1,4 +1,5 @@
 import { useParams } from 'react-router-dom';
+import { MoonLoader } from 'react-spinners';
 import useAxios from '../../Hooks/useAxios';
 import useCloseMenu from '../../Hooks/useCloseMenu';
 import styles from './Article.module.css';
@@ -19,10 +20,10 @@ const Article = () => {
     method: 'GET',
   });
 
-  if (!data) return null;
-
   return (
     <div className={styles.ArticleContainer}>
+      {isPending && <MoonLoader size={40} color='#399F2E' />}
+      {error && <p className={styles.Error}>{error}</p>}
       <h1>{data && data.title}</h1>
       <div className={styles.ParagraphAndImage}>
         <p className={styles.Description}>{data && data.description}</p>
