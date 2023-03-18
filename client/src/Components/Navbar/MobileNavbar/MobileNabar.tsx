@@ -89,11 +89,6 @@ const MobileMenu = () => {
           </NavLink>
         </li>
         <li>
-          <a className={styles.NavLink} href='pabloScyzoryksOnlineRegister'>
-            Register
-          </a>
-        </li>
-        <li>
           <NavLink className={styles.NavLink} to='apply'>
             Apply
           </NavLink>
