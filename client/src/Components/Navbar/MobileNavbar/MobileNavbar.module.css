@@ -11,9 +11,13 @@
 }
 
 .MobileNav img {
-  height: 75%;
+  height: 100%;
   margin-right: 1rem;
   margin-left: 1rem;
+}
+
+.MobileNav a {
+  height: 75%;
 }
 
 .MobileMenu ul {

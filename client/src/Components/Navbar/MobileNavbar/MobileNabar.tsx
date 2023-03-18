@@ -19,7 +19,9 @@ const MobileNavbar = () => {
   return (
     <>
       <nav className={styles.MobileNav}>
-        <img src={logo} alt='logo' />
+        <NavLink to='/'>
+          <img src={logo} alt='logo' />
+        </NavLink>
         <motion.img
           onClick={() => {
             setIsOpen(!isOpen);
