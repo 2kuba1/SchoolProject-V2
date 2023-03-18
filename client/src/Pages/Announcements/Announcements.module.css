@@ -9,22 +9,21 @@
 }
 
 .Buttons {
-  position: relative;
-  top: -2rem;
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
   align-items: center;
-  position: relative;
-  right: 35rem;
   gap: 1.6rem;
+  position: relative;
+  bottom: 2vh;
 }
 
 .Buttons button {
-  height: 2rem;
-  width: 2rem;
+  height: 4vh;
+  width: 4vh;
   background-color: #2b2b2b;
   color: #399f2e;
   cursor: pointer;
+  border: none;
 }
 
 .Buttons p {
@@ -33,4 +32,11 @@
 
 .Hidden {
   display: none;
+}
+
+.Error {
+  color: crimson;
+  font-size: 2.4rem;
+  text-align: center;
+  font-weight: bold;
 }

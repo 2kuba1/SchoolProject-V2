@@ -7,6 +7,26 @@
   border-radius: 2rem;
 }
 
+@media only screen and (max-width: 800px) {
+  .Announcement {
+    width: 45vh;
+    height: 20vh;
+  }
+  .AnnouncementImg {
+    height: 20vh !important;
+    width: 22.5vh !important;
+    object-fit: cover;
+  }
+
+  .TextContent h1 {
+    font-size: 1.6vh;
+  }
+
+  .TextContent span {
+    font-size: 0.5rem !important;
+  }
+}
+
 .Announcement:hover {
   scale: 1.2;
 }

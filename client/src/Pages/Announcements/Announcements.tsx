@@ -4,6 +4,7 @@ import Announcement from '../../Components/Announcement/Announcement';
 import useAxios from '../../Hooks/useAxios';
 import { Link } from 'react-router-dom';
 import useCloseMenu from '../../Hooks/useCloseMenu';
+import { MoonLoader } from 'react-spinners';
 
 interface items {
   id: number;
@@ -31,8 +32,6 @@ const Announcements = () => {
     method: 'GET',
   });
 
-  console.log(data);
-
   useEffect(() => {
     request();
   }, [pageNumber]);
@@ -42,7 +41,8 @@ const Announcements = () => {
   return (
     <div>
       <div className={styles.Announcements}>
-        {isPending && <div>Loading ...</div>}
+        {isPending && <MoonLoader size={40} color='#399F2E' />}
+        {error && <p className={styles.Error}>{error}</p>}
         {data &&
           data.items.map(data => (
             <Link to={`/announcement/${data.id}`}>
