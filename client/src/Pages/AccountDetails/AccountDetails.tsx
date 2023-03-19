@@ -6,12 +6,14 @@ import useRelog from '../../Hooks/useRelog';
 import AccountImg from '../../assets/Account_circle.svg';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
+import { IsMobileContext } from '../../Contexts/IsMobileContext';
 
 const AccountDetails = () => {
   useCloseMenu();
   useRelog();
 
   const { User } = useContext(UserContext);
+  const { isMobile } = useContext(IsMobileContext);
   const [application, setApplication] = useState('Unknown');
 
   useEffect(() => {
@@ -52,10 +54,15 @@ const AccountDetails = () => {
             </div>
           )}
         </div>
-        {User.Role === 'Admin' && (
+        {User.Role === 'Admin' && !isMobile && (
           <Link to='/adminPanel' className={styles.AdminPanel}>
             Admin Panel
           </Link>
+        )}
+        {User.Role === 'Admin' && isMobile && (
+          <div className={styles.IsMobile}>
+            If you want to enter the admin panel you must switch to the computer
+          </div>
         )}
       </div>
     </div>
