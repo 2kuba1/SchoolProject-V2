@@ -22,6 +22,7 @@ const Application = () => {
   const [namesError, setNamesError] = useState(false);
   const [ageError, setAgeError] = useState(false);
   const [emailError, setEmailError] = useState(false);
+  const [succes, setSucces] = useState(false);
 
   const [error, setError] = useState(false);
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
@@ -68,6 +69,7 @@ const Application = () => {
             },
           }
         );
+        setSucces(true);
       } catch (error) {
         setError(true);
       }
@@ -106,6 +108,7 @@ const Application = () => {
             />
             <input type='submit' value='Send' />
           </form>
+          {succes && <p className={styles.Succes}>Succesfully applied</p>}
           {error && <p className={styles.Error}>You have already applied</p>}
         </>
       ) : (
