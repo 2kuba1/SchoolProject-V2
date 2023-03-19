@@ -19,6 +19,27 @@
   width: 30rem;
 }
 
+@media only screen and (max-width: 500px) {
+  .Register form {
+    width: 45vh;
+    position: relative;
+    top: -5vh;
+  }
+  .Register {
+    height: 90vh;
+  }
+  .Register h1 {
+    font-size: 1.6rem;
+  }
+  .Register p {
+    font-size: 0.8rem;
+  }
+  .Register form input {
+    height: 2rem !important;
+    font-size: 1.2rem;
+  }
+}
+
 .Register form input {
   height: 3rem;
   background-color: #2b2b2b;
