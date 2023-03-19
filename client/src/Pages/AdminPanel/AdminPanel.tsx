@@ -1,11 +1,12 @@
 import styles from './AdminPanel.module.css';
 import useCloseMenu from '../../Hooks/useCloseMenu';
 import ExpandMoreButton from './ExpandMoreButton/ExpandMoreButton';
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import { motion } from 'framer-motion';
 import DeleteAnnounecement from './AdminPanelActions/DeleteAnnouncementAction/DeleteAnnouncement';
 import CheckApplications from './AdminPanelActions/CheckApplicationsAction/CheckApplications';
 import CreateAnnouncement from './AdminPanelActions/CreateAnnouncementAction/CreateAnnouncement';
+import { IsMobileContext } from '../../Contexts/IsMobileContext';
 
 const AdminPanel = () => {
   useCloseMenu();
@@ -36,85 +37,98 @@ const AdminPanel = () => {
     );
   };
 
+  const { isMobile } = useContext(IsMobileContext);
+
   return (
     <div className={styles.AdminPaenl}>
-      <h1>Admin Panel</h1>
-      <div className={styles.Action}>
-        <p>Create Announecement</p>
-        <div
-          onClick={() => {
-            setCreateAnnouncementExpand(!createAnnouncementExpand);
-            resizePage(createAnnouncementExpand, 900);
-          }}
-          className={styles.ExpandMoreButton}
-        >
-          <ExpandMoreButton />
-        </div>
-        <motion.div
-          animate={{
-            height: createAnnouncementExpand ? 900 : 0,
-            opacity: createAnnouncementExpand ? 1 : 0,
-          }}
-        >
-          <div
-            className={
-              createAnnouncementExpand ? styles.Visible : styles.Hidden
-            }
-          >
-            <CreateAnnouncement />
+      {!isMobile && (
+        <>
+          <h1>Admin Panel</h1>
+          <div className={styles.Action}>
+            <p>Create Announecement</p>
+            <div
+              onClick={() => {
+                setCreateAnnouncementExpand(!createAnnouncementExpand);
+                resizePage(createAnnouncementExpand, 900);
+              }}
+              className={styles.ExpandMoreButton}
+            >
+              <ExpandMoreButton />
+            </div>
+            <motion.div
+              animate={{
+                height: createAnnouncementExpand ? 900 : 0,
+                opacity: createAnnouncementExpand ? 1 : 0,
+              }}
+            >
+              <div
+                className={
+                  createAnnouncementExpand ? styles.Visible : styles.Hidden
+                }
+              >
+                <CreateAnnouncement />
+              </div>
+            </motion.div>
           </div>
-        </motion.div>
-      </div>
-      <div className={styles.Action}>
-        <p>Delete Announcement</p>
-        <div
-          onClick={() => {
-            setDeleteAnnouncementExpand(!deleteAnnouncementExpand);
-            resizePage(deleteAnnouncementExpand, 300);
-          }}
-          className={styles.ExpandMoreButton}
-        >
-          <ExpandMoreButton />
-        </div>
-        <motion.div
-          animate={{
-            height: deleteAnnouncementExpand ? 300 : 0,
-            opacity: deleteAnnouncementExpand ? 1 : 0,
-          }}
-        >
-          <div
-            className={
-              deleteAnnouncementExpand ? styles.Visible : styles.Hidden
-            }
-          >
-            <DeleteAnnounecement />
+          <div className={styles.Action}>
+            <p>Delete Announcement</p>
+            <div
+              onClick={() => {
+                setDeleteAnnouncementExpand(!deleteAnnouncementExpand);
+                resizePage(deleteAnnouncementExpand, 300);
+              }}
+              className={styles.ExpandMoreButton}
+            >
+              <ExpandMoreButton />
+            </div>
+            <motion.div
+              animate={{
+                height: deleteAnnouncementExpand ? 300 : 0,
+                opacity: deleteAnnouncementExpand ? 1 : 0,
+              }}
+            >
+              <div
+                className={
+                  deleteAnnouncementExpand ? styles.Visible : styles.Hidden
+                }
+              >
+                <DeleteAnnounecement />
+              </div>
+            </motion.div>
           </div>
-        </motion.div>
-      </div>
-      <div className={styles.Action}>
-        <p>Check Applications</p>
-        <div
-          onClick={() => {
-            setCheckApplicationsExpand(!checkApplicationsExpand);
-            resizePage(checkApplicationsExpand, 550);
-          }}
-          className={styles.ExpandMoreButton}
-        >
-          <ExpandMoreButton />
-        </div>
-        <motion.div
-          animate={{
-            height: checkApplicationsExpand ? 550 : 0,
-            opacity: checkApplicationsExpand ? 1 : 0,
-          }}
-        >
-          <div
-            className={checkApplicationsExpand ? styles.Visible : styles.Hidden}
-          >
-            <CheckApplications />
+          <div className={styles.Action}>
+            <p>Check Applications</p>
+            <div
+              onClick={() => {
+                setCheckApplicationsExpand(!checkApplicationsExpand);
+                resizePage(checkApplicationsExpand, 550);
+              }}
+              className={styles.ExpandMoreButton}
+            >
+              <ExpandMoreButton />
+            </div>
+            <motion.div
+              animate={{
+                height: checkApplicationsExpand ? 550 : 0,
+                opacity: checkApplicationsExpand ? 1 : 0,
+              }}
+            >
+              <div
+                className={
+                  checkApplicationsExpand ? styles.Visible : styles.Hidden
+                }
+              >
+                <CheckApplications />
+              </div>
+            </motion.div>
           </div>
-        </motion.div>
-      </div>
+        </>
+      )}
+      {isMobile && (
+        <div className={styles.IsMobile}>
+          If you want to enter the admin panel you must switch to the computer
+        </div>
+      )}
     </div>
   );
 };

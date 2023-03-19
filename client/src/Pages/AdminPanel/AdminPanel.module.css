@@ -62,3 +62,9 @@ textarea {
   position: relative;
   margin-bottom: 2rem;
 }
+
+.IsMobile {
+  font-size: 2.4rem;
+  color: crimson;
+  text-align: center;
+}
