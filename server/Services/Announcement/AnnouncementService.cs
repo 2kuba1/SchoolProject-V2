@@ -73,7 +73,7 @@ public class AnnouncementService : IAnnouncementService
         
         var thumbnail = new Thumbnail()
         {
-            ThumbnailUrl = "https://yjvgyugzpihjaeyadykg.supabase.co/storage/v1/object/public/thumbnails/"+newFileName,
+            ThumbnailUrl = $"{_configuration.GetValue<string>("Url")}/storage/v1/object/public/thumbnails/{newFileName}",
             FileName = newFileName,
             AnnouncementId = id
         };
@@ -116,7 +116,7 @@ public class AnnouncementService : IAnnouncementService
         
         var image = new Image()
         {
-            ImageUrl = "https://yjvgyugzpihjaeyadykg.supabase.co/storage/v1/object/public/images/"+newFileName,
+            ImageUrl = $"{_configuration.GetValue<string>("Url")}/storage/v1/object/public/images/{newFileName}",
             FileName = newFileName,
             AnnouncementId = id
         };
