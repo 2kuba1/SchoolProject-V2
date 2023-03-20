@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Czas generowania: 27 Lut 2023, 00:16
+-- Czas generowania: 20 Mar 2023, 20:54
 -- Wersja serwera: 10.4.27-MariaDB
 -- Wersja PHP: 8.2.0
 
@@ -35,24 +35,6 @@ CREATE TABLE `announcements` (
   `CreatedBy` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
---
--- Zrzut danych tabeli `announcements`
---
-
-INSERT INTO `announcements` (`Id`, `Title`, `Description`, `CreationDate`, `CreatedBy`) VALUES
-(18, 'Our School', 'Our school is nice', '2023-02-25 22:33:21.299155', 2),
-(19, 'Our Students', 'We have cool students', '2023-02-25 22:34:01.059215', 2),
-(20, 'Our Teachers', 'We have cool Teachers', '2023-02-25 22:34:27.879919', 2),
-(21, 'JOl jol jol', 'hejka jestem marek', '2023-02-26 00:22:43.952159', 2),
-(22, 'string', 'string', '2023-02-26 18:38:41.321184', 2),
-(23, 'string', 'string', '2023-02-26 18:38:42.742768', 2),
-(24, 'string', 'string', '2023-02-26 18:38:43.534454', 2),
-(25, 'asdasdasdasdasdasdasdsdfasdfjhasdfjhasgdjfhkgasdjhfgsajekhgrfjkhaesgffcfewfqwefew', 'string', '2023-02-26 18:54:35.459238', 2),
-(26, 'Our school is very nice and cool I love our teachers and my life changed so mutch when I joined this school', 'string', '2023-02-26 18:58:58.868785', 2),
-(27, 'string', 'string', '2023-02-27 00:05:16.336314', 2),
-(28, 'string', 'string', '2023-02-27 00:05:16.996769', 2),
-(29, 'string', 'string', '2023-02-27 00:05:17.951827', 2);
-
 -- --------------------------------------------------------
 
 --
@@ -80,17 +62,6 @@ CREATE TABLE `images` (
   `AnnouncementId` int(11) NOT NULL,
   `FileName` longtext NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Zrzut danych tabeli `images`
---
-
-INSERT INTO `images` (`Id`, `ImageUrl`, `AnnouncementId`, `FileName`) VALUES
-(11, 'https://yjvgyugzpihjaeyadykg.supabase.co/storage/v1/object/public/images/strona.png', 18, 'strona.png'),
-(12, 'https://yjvgyugzpihjaeyadykg.supabase.co/storage/v1/object/public/images/czarneusz.jpg', 18, 'czarneusz.jpg'),
-(13, 'https://yjvgyugzpihjaeyadykg.supabase.co/storage/v1/object/public/images/ss1.png', 18, 'ss1.png'),
-(14, 'https://yjvgyugzpihjaeyadykg.supabase.co/storage/v1/object/public/images/ss2.png', 18, 'ss2.png'),
-(15, 'https://yjvgyugzpihjaeyadykg.supabase.co/storage/v1/object/public/images/image.png', 18, 'image.png');
 
 -- --------------------------------------------------------
 
@@ -124,16 +95,6 @@ CREATE TABLE `thumbnails` (
   `FileName` longtext NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
---
--- Zrzut danych tabeli `thumbnails`
---
-
-INSERT INTO `thumbnails` (`Id`, `ThumbnailUrl`, `AnnouncementId`, `FileName`) VALUES
-(20, 'https://yjvgyugzpihjaeyadykg.supabase.co/storage/v1/object/public/thumbnails/jolo.png', 18, 'jolo.png'),
-(21, 'https://yjvgyugzpihjaeyadykg.supabase.co/storage/v1/object/public/thumbnails/czarneusz.jpg', 19, 'czarneusz.jpg'),
-(22, 'https://yjvgyugzpihjaeyadykg.supabase.co/storage/v1/object/public/thumbnails/image.png', 20, 'image.png'),
-(23, 'https://yjvgyugzpihjaeyadykg.supabase.co/storage/v1/object/public/thumbnails/strona.png', 21, 'strona.png');
-
 -- --------------------------------------------------------
 
 --
@@ -150,17 +111,6 @@ CREATE TABLE `users` (
   `ApplicationId` int(11) DEFAULT NULL,
   `RoleId` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Zrzut danych tabeli `users`
---
-
-INSERT INTO `users` (`Id`, `FirstName`, `LastName`, `Email`, `PasswordHash`, `ApplicationStatus`, `ApplicationId`, `RoleId`) VALUES
-(1, 'Jakub', 'Wojtyna', '2kubaa1@gmail.com', '$2a$11$OeE5bi/VhPGA5Gm5mvGJy.hSMjzCjx8y9Syugurv0O.MxEHad/tB6', 'Approved', NULL, 1),
-(2, 'Dejvid', 'Bi', 'dejvid.bi@gmail.com', '$2a$11$zIwbSHUch7MU1q1d7ksHhuT44G8xWoeWCVmz33swFoc.4CksUDjb2', 'Unknown', NULL, 2),
-(3, 'xdd', 'xdd', 'xdd@gmail.com', '$2a$11$/ncbRgl.NJw0quRA99x11OcQ1tXS0gXVcRPGKJEHOCU/Mr4Q2VOQa', 'Unknown', NULL, 2),
-(4, 'xdd', 'xdd', 'xddd@gmail.com', '$2a$11$ctmZkKj93wPXJPotSWM9VOFv/VUdMmeI0aWMbdVfqO3TSrfTmcqRO', 'Rejected', NULL, 1),
-(5, 'string', 'string', 'string', '$2a$11$ElOcE4I5tDS3MqwkEKrjhufzgkir2vzMxmbTSqxvRToPPGhI.dyue', 'Unknown', NULL, 1);
 
 -- --------------------------------------------------------
 
@@ -243,19 +193,19 @@ ALTER TABLE `__efmigrationshistory`
 -- AUTO_INCREMENT dla tabeli `announcements`
 --
 ALTER TABLE `announcements`
-  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
+  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
 
 --
 -- AUTO_INCREMENT dla tabeli `applications`
 --
 ALTER TABLE `applications`
-  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT dla tabeli `images`
 --
 ALTER TABLE `images`
-  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT dla tabeli `roles`
@@ -267,13 +217,13 @@ ALTER TABLE `roles`
 -- AUTO_INCREMENT dla tabeli `thumbnails`
 --
 ALTER TABLE `thumbnails`
-  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT dla tabeli `users`
 --
 ALTER TABLE `users`
-  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- Ograniczenia dla zrzutów tabel
