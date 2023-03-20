@@ -6,8 +6,9 @@ import ComputerScienceImg from '../../assets/ComuterScience.png';
 import GraphicDesignImg from '../../assets/GraphicDesign.png';
 import LogisticImg from '../../assets/LogisticProfile.png';
 import { useRef } from 'react';
-import Profiles, { profiles } from '../../Components/Profiles/Profiles';
+import Profiles from '../../Components/Profiles/Profiles';
 import useCloseMenu from '../../Hooks/useCloseMenu';
+import { profiles } from '../../Types/Profiles';
 
 const Home = () => {
   useCloseMenu();
@@ -19,24 +20,28 @@ const Home = () => {
 
   const profileArray: profiles[] = [
     {
+      id: 1,
       img: MilitaryClassImg,
       imgAlt: 'Military Class',
       header: 'Military Class',
       text: "A military profile is a record of a service member's military service, achievements, and assignments. It is used for career tracking, promotions, and retirement, and also serves as a resource for veterans to access their military records and benefits.",
     },
     {
+      id: 2,
       img: ComputerScienceImg,
       imgAlt: 'Computer Science Class',
       header: 'Computer Science Class',
       text: 'A high school computer science  profile teaches students the basics of programming languages like Python and Java, and focuses on building skills in software development and computer systems. It aims to prepare students for further study in computer science or related fields, or to provide them with valuable skills for their future careers.',
     },
     {
+      id: 3,
       img: GraphicDesignImg,
       imgAlt: 'Graphic Design Class',
       header: 'Graphic Design Class',
       text: 'Graphic design profiles in high school teach students the skills needed to create designs for print and digital media using digital tools and software like Adobe Photoshop, Illustrator, and InDesign. The goal is to prepare students for further study in graphic design or related fields or to provide them with valuable skills for their future careers.',
     },
     {
+      id: 4,
       img: LogisticImg,
       imgAlt: 'Logistic Class',
       header: 'Logistic Class',
@@ -84,6 +89,8 @@ const Home = () => {
                 img={data.img}
                 imgAlt={data.imgAlt}
                 text={data.text}
+                id={data.id}
+                key={data.id}
               />
             ))}
           </div>

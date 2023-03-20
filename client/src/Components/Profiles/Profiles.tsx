@@ -1,12 +1,6 @@
 import styles from './Profiles.module.css';
 import { FC } from 'react';
-
-export type profiles = {
-  header: string;
-  text: string;
-  imgAlt: string;
-  img: string;
-};
+import { profiles } from '../../Types/Profiles';
 
 const Profiles: FC<profiles> = props => {
   return (
