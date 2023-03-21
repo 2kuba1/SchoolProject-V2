@@ -16,6 +16,7 @@ const CreateAnnouncement = () => {
 
   const [isPending, setIsPending] = useState(false);
   const [error, setError] = useState(false);
+  const [success, setSuccess] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -69,6 +70,7 @@ const CreateAnnouncement = () => {
           }
         );
       });
+      setSuccess(true);
     } catch (err) {
       setError(true);
     } finally {
@@ -92,6 +94,7 @@ const CreateAnnouncement = () => {
         ) : (
           <input type='submit' value='Create' />
         )}
+        {success && <p className={styles.Success}>Announcement created</p>}
         {error && <p>Something went wrong</p>}
       </form>
     </div>

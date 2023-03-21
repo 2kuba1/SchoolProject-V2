@@ -58,3 +58,9 @@
   font-size: 1.6rem;
   color: crimson;
 }
+
+.Success {
+  color: green !important;
+  font-size: 1.6rem;
+  margin: 1rem 0;
+}
