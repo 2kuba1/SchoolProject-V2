@@ -73,13 +73,14 @@ public class AnnouncementService : IAnnouncementService
         
         var thumbnail = new Thumbnail()
         {
-            ThumbnailUrl = $"{_configuration.GetValue<string>("Url")}/storage/v1/object/public/thumbnails/{newFileName}",
+            ThumbnailUrl = $"{supabaseUrl}/storage/v1/object/public/thumbnails/{newFileName}",
             FileName = newFileName,
             AnnouncementId = id
         };
         
         await _dbContext.Thumbnails.AddAsync(thumbnail);
         await _dbContext.SaveChangesAsync();
+        File.Delete(fullPath);
     }
     
     public async Task AddImage(IFormFile file, int id)
@@ -116,13 +117,14 @@ public class AnnouncementService : IAnnouncementService
         
         var image = new Image()
         {
-            ImageUrl = $"{_configuration.GetValue<string>("Url")}/storage/v1/object/public/images/{newFileName}",
+            ImageUrl = $"{supabaseUrl}/storage/v1/object/public/images/{newFileName}",
             FileName = newFileName,
             AnnouncementId = id
         };
 
         await _dbContext.Images.AddAsync(image);
         await _dbContext.SaveChangesAsync();
+        File.Delete(fullPath);
     }
 
     public async Task DeleteAnnouncement(int id)

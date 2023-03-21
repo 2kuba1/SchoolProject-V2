@@ -2,7 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1e1b466e-14ce-4082-a076-2201cf6c5601" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.HighSchoolAPI/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.HighSchoolAPI/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Services/Announcement/AnnouncementService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Services/Announcement/AnnouncementService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wwwroot/Images/czarneusz.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/wwwroot/Images/image.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/wwwroot/Images/ss1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/wwwroot/Images/ss2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/wwwroot/Images/strona.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/wwwroot/Thumbnails/czarneusz.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/wwwroot/Thumbnails/image.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/wwwroot/Thumbnails/jolo.png" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -129,6 +137,7 @@
       <workItem from="1678902850296" duration="21000" />
       <workItem from="1679250620983" duration="471000" />
       <workItem from="1679341363082" duration="721000" />
+      <workItem from="1679342874334" duration="233000" />
     </task>
     <servers />
   </component>
