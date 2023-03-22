@@ -5,6 +5,9 @@
   align-items: center;
   flex-direction: column;
   gap: 3.5rem;
+}
+
+.Announcement {
   cursor: pointer;
 }
 
