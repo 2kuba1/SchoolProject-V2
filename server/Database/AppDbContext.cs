@@ -13,6 +13,7 @@ public class AppDbContext : DbContext
     public DbSet<Application> Applications { get; set; }
     public DbSet<Image> Images { get; set; }
     public DbSet<Thumbnail> Thumbnails { get; set; }
+    public DbSet<Comment> Comments { get; set; }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {

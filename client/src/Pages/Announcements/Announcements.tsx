@@ -45,7 +45,10 @@ const Announcements = () => {
         {error && <p className={styles.Error}>{error}</p>}
         {data &&
           data.items.map(data => (
-            <Link to={`/announcement/${data.id}`}>
+            <Link
+              className={styles.Announcement}
+              to={`/announcement/${data.id}`}
+            >
               <Announcement
                 creationDate={data.creationDate}
                 id={data.id}
