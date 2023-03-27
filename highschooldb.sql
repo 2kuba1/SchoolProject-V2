@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Czas generowania: 20 Mar 2023, 20:54
+-- Czas generowania: 27 Mar 2023, 22:07
 -- Wersja serwera: 10.4.27-MariaDB
 -- Wersja PHP: 8.2.0
 
@@ -35,6 +35,13 @@ CREATE TABLE `announcements` (
   `CreatedBy` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Zrzut danych tabeli `announcements`
+--
+
+INSERT INTO `announcements` (`Id`, `Title`, `Description`, `CreationDate`, `CreatedBy`) VALUES
+(1, 'Jeste admine', 'Jeste zajebiste admine na wlasnej stronie ouou je i je piotrek jest pieskiem bo mi ukradl pasy do supabase i juz mu nie ufam ouou je i je ', '2023-03-20 21:21:20.819247', 1);
+
 -- --------------------------------------------------------
 
 --
@@ -53,6 +60,27 @@ CREATE TABLE `applications` (
 -- --------------------------------------------------------
 
 --
+-- Struktura tabeli dla tabeli `comments`
+--
+
+CREATE TABLE `comments` (
+  `Id` int(11) NOT NULL,
+  `Name` longtext NOT NULL,
+  `Content` longtext NOT NULL,
+  `CreationDate` datetime(6) NOT NULL,
+  `CreatedBy` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Zrzut danych tabeli `comments`
+--
+
+INSERT INTO `comments` (`Id`, `Name`, `Content`, `CreationDate`, `CreatedBy`) VALUES
+(2, 'string', 'Jebac disa kruwa', '2023-03-22 21:59:09.166000', 0);
+
+-- --------------------------------------------------------
+
+--
 -- Struktura tabeli dla tabeli `images`
 --
 
@@ -62,6 +90,14 @@ CREATE TABLE `images` (
   `AnnouncementId` int(11) NOT NULL,
   `FileName` longtext NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Zrzut danych tabeli `images`
+--
+
+INSERT INTO `images` (`Id`, `ImageUrl`, `AnnouncementId`, `FileName`) VALUES
+(1, 'https://lfjhgwpnexjkwmpxtwau.supabase.co/storage/v1/object/public/images/333873470_739057554528072_4346759767898271164_n.jpg', 1, '333873470_739057554528072_4346759767898271164_n.jpg'),
+(2, 'https://lfjhgwpnexjkwmpxtwau.supabase.co/storage/v1/object/public/images/332359434_526191219433659_7068389750592544825_n.png', 1, '332359434_526191219433659_7068389750592544825_n.png');
 
 -- --------------------------------------------------------
 
@@ -95,6 +131,13 @@ CREATE TABLE `thumbnails` (
   `FileName` longtext NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Zrzut danych tabeli `thumbnails`
+--
+
+INSERT INTO `thumbnails` (`Id`, `ThumbnailUrl`, `AnnouncementId`, `FileName`) VALUES
+(1, 'https://lfjhgwpnexjkwmpxtwau.supabase.co/storage/v1/object/public/thumbnails/332031701_157338447119192_8718644420365053884_n.jpg', 1, '332031701_157338447119192_8718644420365053884_n.jpg');
+
 -- --------------------------------------------------------
 
 --
@@ -111,6 +154,13 @@ CREATE TABLE `users` (
   `ApplicationId` int(11) DEFAULT NULL,
   `RoleId` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Zrzut danych tabeli `users`
+--
+
+INSERT INTO `users` (`Id`, `FirstName`, `LastName`, `Email`, `PasswordHash`, `ApplicationStatus`, `ApplicationId`, `RoleId`) VALUES
+(1, 'Jakub', 'Admin', 'admin@admin.com', '$2a$11$uyTeNxtsa3rkkIPo3t4h3OF8XlKWv0NrpwY34LvBZPgklRGZ.2yDa', 'Unknown', NULL, 2);
 
 -- --------------------------------------------------------
 
@@ -133,7 +183,8 @@ INSERT INTO `__efmigrationshistory` (`MigrationId`, `ProductVersion`) VALUES
 ('20230221160506_ForignKeyToImages', '7.0.3'),
 ('20230222121253_ModifyAnnouncementEntity', '7.0.3'),
 ('20230222123040_ModifyImageEntity', '7.0.3'),
-('20230222213141_ModifyTypeOfDateOfBirth', '7.0.3');
+('20230222213141_ModifyTypeOfDateOfBirth', '7.0.3'),
+('20230322215640_AddCommentsTable', '7.0.3');
 
 --
 -- Indeksy dla zrzutów tabel
@@ -149,6 +200,12 @@ ALTER TABLE `announcements`
 -- Indeksy dla tabeli `applications`
 --
 ALTER TABLE `applications`
+  ADD PRIMARY KEY (`Id`);
+
+--
+-- Indeksy dla tabeli `comments`
+--
+ALTER TABLE `comments`
   ADD PRIMARY KEY (`Id`);
 
 --
@@ -193,19 +250,25 @@ ALTER TABLE `__efmigrationshistory`
 -- AUTO_INCREMENT dla tabeli `announcements`
 --
 ALTER TABLE `announcements`
-  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
+  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT dla tabeli `applications`
 --
 ALTER TABLE `applications`
-  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT dla tabeli `comments`
+--
+ALTER TABLE `comments`
+  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT dla tabeli `images`
 --
 ALTER TABLE `images`
-  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT dla tabeli `roles`
@@ -217,13 +280,13 @@ ALTER TABLE `roles`
 -- AUTO_INCREMENT dla tabeli `thumbnails`
 --
 ALTER TABLE `thumbnails`
-  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT dla tabeli `users`
 --
 ALTER TABLE `users`
-  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- Ograniczenia dla zrzutów tabel
