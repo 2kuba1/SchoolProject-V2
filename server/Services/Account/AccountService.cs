@@ -32,7 +32,7 @@ public class AccountService : IAccountService
         var newUser = new User()
         {
             Email = dto.Email,
-            RoleId = dto.RoleId,
+            RoleId = 2,
             FirstName = dto.FirstName,
             LastName = dto.LastName
         };
