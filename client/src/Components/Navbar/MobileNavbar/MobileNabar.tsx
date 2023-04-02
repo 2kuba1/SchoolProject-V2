@@ -2,7 +2,7 @@ import styles from './MobileNavbar.module.css';
 import menu from '../../../assets/Menu.png';
 import logo from '../../../assets/Logo.svg';
 import { useContext, useState } from 'react';
-import { motion } from 'framer-motion';
+import { AnimatePresence, motion } from 'framer-motion';
 import { NavbarContext } from '../../../Context/NavbarContext';
 import { NavLink } from 'react-router-dom';
 import { IsLoggedContext } from '../../../Context/IsLoggedContext';
@@ -32,24 +32,26 @@ const MobileNavbar = () => {
           transition={{ duration: 0.5, type: 'tween' }}
         />
       </nav>
-      {IsShown.isShown && (
-        <motion.div
-          initial={{
-            height: 0,
-            opacity: 0,
-          }}
-          animate={{
-            height: 'auto',
-            opacity: 1,
-          }}
-          exit={{
-            height: 0,
-            opacity: 0,
-          }}
-        >
-          <MobileMenu />
-        </motion.div>
-      )}
+      <AnimatePresence>
+        {IsShown.isShown && (
+          <motion.div
+            initial={{
+              height: 0,
+              opacity: 0,
+            }}
+            animate={{
+              height: 'auto',
+              opacity: 1,
+            }}
+            exit={{
+              height: 0,
+              opacity: 0,
+            }}
+          >
+            <MobileMenu />
+          </motion.div>
+        )}
+      </AnimatePresence>
     </>
   );
 };
