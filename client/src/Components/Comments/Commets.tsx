@@ -51,6 +51,7 @@ const Comments = () => {
       );
     }
     request2();
+    setTextAreaData('');
   };
 
   useEffect(() => {
@@ -73,6 +74,7 @@ const Comments = () => {
             cols={30}
             rows={3}
             onChange={e => setTextAreaData(e.target.value)}
+            value={textAreaData}
           ></textarea>
           <input className={styles.Submit} type='submit' value='Send' />
         </form>
