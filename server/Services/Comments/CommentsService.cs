@@ -20,16 +20,16 @@ public class CommentsService : ICommentsService
         _contextService = contextService;
     }
     
-    public async Task AddComment(AddCommentDto dto)
+    public async Task AddComment(AddCommentDto dto, int announcementId)
     {
         var userId = _contextService.GetUserId.Value;
         var comment = new Comment()
         {
-            CreationDate = dto.CreationDate,
-            Content = dto.Contet,
-            Name = dto.Name, 
+            CreationDate = DateTime.Now,
+            Content = dto.Content,
+            Name = $"{_contextService.User.FindFirst(c => c.Type == "FirstName").Value} {_contextService.User.FindFirst(c => c.Type == "LastName").Value}", 
             CreatedBy = userId,
-            AnnouncementId = dto.AnnouncementId
+            AnnouncementId = announcementId
         };
 
         await _dbContext.Comments.AddAsync(comment);

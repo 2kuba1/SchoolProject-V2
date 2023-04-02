@@ -16,12 +16,12 @@ public class CommentsController : ControllerBase
         _service = service;
     }
     
-    [Route("addComment")]
+    [Route("addComment/{announcementId:int}")]
     [Authorize(Policy = "AuthUser")]
     [HttpPost]
-    public async Task<ActionResult> AddComment([FromBody] AddCommentDto dto)
+    public async Task<ActionResult> AddComment([FromBody] AddCommentDto dto, [FromRoute]int announcementId)
     {
-        await _service.AddComment(dto);
+        await _service.AddComment(dto, announcementId);
         return NoContent();
     }
 

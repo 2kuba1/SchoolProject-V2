@@ -8,6 +8,6 @@ public class CommentsMappingProfile : Profile
 {
     public CommentsMappingProfile()
     {
-        CreateMap<Comment, GetCommentsDto>().ForMember(x => x.Conetnt, c => c.MapFrom(d => d.Content));
+        CreateMap<Comment, GetCommentsDto>().ForMember(x => x.Content, c => c.MapFrom(d => d.Content));
     }    
 }
