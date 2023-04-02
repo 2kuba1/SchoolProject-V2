@@ -1,5 +1,5 @@
 import { useContext, useEffect } from 'react';
-import { NavbarContext } from '../Contexts/NavbarContext';
+import { NavbarContext } from '../Context/NavbarContext';
 
 const useCloseMenu = () => {
   const { SetIsShown } = useContext(NavbarContext);

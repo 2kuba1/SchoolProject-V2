@@ -14,7 +14,7 @@ import NotFound from './Pages/NotFound/NotFound';
 import ProtectedAdminRoutes from './Utils/Routes/ProtectedAdminRoutes';
 import ProtectedRoutes from './Utils/Routes/ProtectedRoutes';
 import { useContext } from 'react';
-import { IsMobileContext } from './Contexts/IsMobileContext';
+import { IsMobileContext } from './Context/IsMobileContext';
 import MobileNavbar from './Components/Navbar/MobileNavbar/MobileNabar';
 
 function App() {

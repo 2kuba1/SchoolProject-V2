@@ -3,8 +3,8 @@ import AccountImage from '../../assets/Account_circle.svg';
 import { Link } from 'react-router-dom';
 import { useContext } from 'react';
 import useRelog from '../../Hooks/useRelog';
-import { IsLoggedContext } from '../../Contexts/IsLoggedContext';
-import { UserContext } from '../../Contexts/UserContext';
+import { IsLoggedContext } from '../../Context/IsLoggedContext';
+import { UserContext } from '../../Context/UserContext';
 import useCloseMenu from '../../Hooks/useCloseMenu';
 
 const AccountMenu = () => {

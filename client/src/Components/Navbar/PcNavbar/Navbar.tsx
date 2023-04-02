@@ -4,7 +4,7 @@ import styles from './Navbar.module.css';
 import { NavLink } from 'react-router-dom';
 import { useContext, useState } from 'react';
 import AccountMenu from '../../AccountMenu/AccountMenu';
-import { NavbarContext } from '../../../Contexts/NavbarContext';
+import { NavbarContext } from '../../../Context/NavbarContext';
 
 const Navbar = () => {
   const { IsShown, SetIsShown } = useContext(NavbarContext);

@@ -3,10 +3,10 @@ import menu from '../../../assets/Menu.png';
 import logo from '../../../assets/Logo.svg';
 import { useContext, useState } from 'react';
 import { motion } from 'framer-motion';
-import { NavbarContext } from '../../../Contexts/NavbarContext';
+import { NavbarContext } from '../../../Context/NavbarContext';
 import { NavLink } from 'react-router-dom';
-import { IsLoggedContext } from '../../../Contexts/IsLoggedContext';
-import { UserContext } from '../../../Contexts/UserContext';
+import { IsLoggedContext } from '../../../Context/IsLoggedContext';
+import { UserContext } from '../../../Context/UserContext';
 import useRelog from '../../../Hooks/useRelog';
 
 const MobileNavbar = () => {

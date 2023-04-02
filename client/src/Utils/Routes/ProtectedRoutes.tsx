@@ -1,6 +1,6 @@
 import { useContext } from 'react';
 import { Outlet, useNavigate } from 'react-router-dom';
-import { IsLoggedContext } from '../../Contexts/IsLoggedContext';
+import { IsLoggedContext } from '../../Context/IsLoggedContext';
 import useRelog from '../../Hooks/useRelog';
 
 const ProtectedRoutes = () => {

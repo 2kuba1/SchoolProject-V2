@@ -1,7 +1,7 @@
 import { useContext, useEffect } from 'react';
 import jwtDecode from 'jwt-decode';
-import { User, UserContext } from '../Contexts/UserContext';
-import { IsLoggedContext } from '../Contexts/IsLoggedContext';
+import { User, UserContext } from '../Context/UserContext';
+import { IsLoggedContext } from '../Context/IsLoggedContext';
 
 const useRelog = () => {
   const { User, SetUser } = useContext(UserContext);

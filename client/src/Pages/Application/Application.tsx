@@ -1,11 +1,11 @@
 import styles from './Application.module.css';
 import useCloseMenu from '../../Hooks/useCloseMenu';
 import { FormEvent, useContext, useRef, useState } from 'react';
-import { IsLoggedContext } from '../../Contexts/IsLoggedContext';
+import { IsLoggedContext } from '../../Context/IsLoggedContext';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 import useRelog from '../../Hooks/useRelog';
-import { UserContext } from '../../Contexts/UserContext';
+import { UserContext } from '../../Context/UserContext';
 import { z } from 'zod';
 
 const Application = () => {

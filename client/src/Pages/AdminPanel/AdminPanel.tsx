@@ -6,7 +6,7 @@ import { motion } from 'framer-motion';
 import DeleteAnnounecement from './AdminPanelActions/DeleteAnnouncementAction/DeleteAnnouncement';
 import CheckApplications from './AdminPanelActions/CheckApplicationsAction/CheckApplications';
 import CreateAnnouncement from './AdminPanelActions/CreateAnnouncementAction/CreateAnnouncement';
-import { IsMobileContext } from '../../Contexts/IsMobileContext';
+import { IsMobileContext } from '../../Context/IsMobileContext';
 
 const AdminPanel = () => {
   useCloseMenu();

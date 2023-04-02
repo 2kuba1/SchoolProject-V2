@@ -1,12 +1,12 @@
 import styles from './AccountDetails.module.css';
 import { useContext, useEffect, useState } from 'react';
-import { UserContext } from '../../Contexts/UserContext';
+import { UserContext } from '../../Context/UserContext';
 import useCloseMenu from '../../Hooks/useCloseMenu';
 import useRelog from '../../Hooks/useRelog';
 import AccountImg from '../../assets/Account_circle.svg';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
-import { IsMobileContext } from '../../Contexts/IsMobileContext';
+import { IsMobileContext } from '../../Context/IsMobileContext';
 
 const AccountDetails = () => {
   useCloseMenu();
