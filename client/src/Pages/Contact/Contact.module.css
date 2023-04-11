@@ -37,6 +37,18 @@
   font-size: 1rem;
 }
 
+.Contact form input[type='submit'] {
+  width: 21rem;
+  height: 2rem;
+  border: none;
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+  background-color: #2b2b2b;
+  color: #d3d3d3;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
 .Contact form textarea {
   font-size: 1rem;
   width: 20rem;
@@ -55,5 +67,9 @@
 
   .Contact form textarea {
     width: 50rem;
+  }
+  .Contact form input[type='submit'] {
+    width: 51rem;
+    height: 3rem;
   }
 }

@@ -12,7 +12,6 @@ const Contact = () => {
       </h1>
       <form>
         <input type='text' placeholder='First name' />
-        <input type='text' placeholder='Last name' />
         <input type='email' placeholder="What's your email?" />
         <textarea
           cols={30}

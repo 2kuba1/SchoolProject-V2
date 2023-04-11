@@ -28,6 +28,8 @@ const Register = () => {
   const digit = new RegExp('(\\d)+');
   const symbol = new RegExp('(\\W)+');
 
+  //danger shit code
+
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setFirsNameError(false);

@@ -25,6 +25,9 @@ const Application = () => {
   const [succes, setSucces] = useState(false);
 
   const [error, setError] = useState(false);
+
+  //danger shit code
+
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setNamesError(false);
