@@ -5,6 +5,7 @@ import useAxios from '../../Hooks/useAxios';
 import { Link } from 'react-router-dom';
 import useCloseMenu from '../../Hooks/useCloseMenu';
 import { MoonLoader } from 'react-spinners';
+import { AnimatePresence, motion } from 'framer-motion';
 
 interface items {
   id: number;
@@ -40,81 +41,97 @@ const Announcements = () => {
 
   return (
     <div>
-      <div className={styles.Announcements}>
-        {isPending && <MoonLoader size={40} color='#399F2E' />}
-        {error && <p className={styles.Error}>{error}</p>}
-        {data &&
-          data.items.map(data => (
-            <Link
-              className={styles.Announcement}
-              to={`/announcement/${data.id}`}
-            >
-              <Announcement
-                creationDate={data.creationDate}
-                id={data.id}
-                title={data.title}
-                thumbnailUrl={data.thumbnailUrl}
-              />
-            </Link>
-          ))}
-      </div>
-      <div className={styles.Buttons}>
-        <button
-          className={
-            pageNumber === totalPages && pageNumber - 2 > 0 ? '' : styles.Hidden
-          }
-          onClick={() => {
-            if (pageNumber === totalPages) {
-              setPageNumber((pageNumber -= 2));
+      <AnimatePresence>
+        <motion.div
+          initial={{ x: -500 }}
+          animate={{ x: 0 }}
+          exit={{ x: 0 }}
+          transition={{ duration: 0.5, type: 'spring' }}
+          className={styles.Announcements}
+        >
+          {isPending && <MoonLoader size={40} color='#399F2E' />}
+          {error && <p className={styles.Error}>{error}</p>}
+          {data &&
+            data.items.map(data => (
+              <Link
+                className={styles.Announcement}
+                to={`/announcement/${data.id}`}
+              >
+                <Announcement
+                  creationDate={data.creationDate}
+                  id={data.id}
+                  title={data.title}
+                  thumbnailUrl={data.thumbnailUrl}
+                />
+              </Link>
+            ))}
+        </motion.div>
+        <motion.div
+          initial={{ x: -500 }}
+          animate={{ x: 0 }}
+          exit={{ x: 0 }}
+          transition={{ duration: 0.5, type: 'spring' }}
+          className={styles.Buttons}
+        >
+          <button
+            className={
+              pageNumber === totalPages && pageNumber - 2 > 0
+                ? ''
+                : styles.Hidden
             }
-          }}
-        >
-          {pageNumber - 2}
-        </button>
-        <button
-          className={pageNumber - 1 <= 0 ? styles.Hidden : ''}
-          onClick={() => {
-            if (pageNumber - 1 >= 0) {
-              setPageNumber((pageNumber -= 1));
+            onClick={() => {
+              if (pageNumber === totalPages) {
+                setPageNumber((pageNumber -= 2));
+              }
+            }}
+          >
+            {pageNumber - 2}
+          </button>
+          <button
+            className={pageNumber - 1 <= 0 ? styles.Hidden : ''}
+            onClick={() => {
+              if (pageNumber - 1 >= 0) {
+                setPageNumber((pageNumber -= 1));
+              }
+            }}
+          >
+            {pageNumber - 1}
+          </button>
+          <button>{pageNumber}</button>
+          <button
+            className={pageNumber + 1 > totalPages! ? styles.Hidden : ''}
+            onClick={() => {
+              if (pageNumber + 1 <= data!.totalPages) {
+                setPageNumber((pageNumber += 1));
+              }
+            }}
+          >
+            {pageNumber + 1}
+          </button>
+          <button
+            className={
+              pageNumber === 1 && pageNumber + 2 <= totalPages!
+                ? ''
+                : styles.Hidden
             }
-          }}
-        >
-          {pageNumber - 1}
-        </button>
-        <button>{pageNumber}</button>
-        <button
-          className={pageNumber + 1 > totalPages! ? styles.Hidden : ''}
-          onClick={() => {
-            if (pageNumber + 1 <= data!.totalPages) {
-              setPageNumber((pageNumber += 1));
-            }
-          }}
-        >
-          {pageNumber + 1}
-        </button>
-        <button
-          className={
-            pageNumber === 1 && pageNumber + 2 <= totalPages!
-              ? ''
-              : styles.Hidden
-          }
-          onClick={() => {
-            if (pageNumber + 2 <= totalPages!) {
-              setPageNumber((pageNumber += 2));
-            }
-          }}
-        >
-          {pageNumber + 2}
-        </button>
-        <p>of</p>
-        <button
-          onClick={() => {
-            setPageNumber(data!.totalPages);
-          }}
-        >
-          {data?.totalPages}
-        </button>
-      </div>
+            onClick={() => {
+              if (pageNumber + 2 <= totalPages!) {
+                setPageNumber((pageNumber += 2));
+              }
+            }}
+          >
+            {pageNumber + 2}
+          </button>
+          <p>of</p>
+          <button
+            onClick={() => {
+              setPageNumber(data!.totalPages);
+            }}
+          >
+            {data?.totalPages}
+          </button>
+        </motion.div>
+      </AnimatePresence>
     </div>
   );
 };

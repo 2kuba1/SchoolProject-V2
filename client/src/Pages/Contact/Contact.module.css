@@ -47,3 +47,13 @@
   background-color: #2b2b2b;
   color: #d3d3d3;
 }
+
+@media only screen and (min-width: 800px) {
+  .Contact form input {
+    width: 50rem;
+  }
+
+  .Contact form textarea {
+    width: 50rem;
+  }
+}
