@@ -73,3 +73,15 @@
     height: 3rem;
   }
 }
+
+.Error {
+  color: red;
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.Success {
+  color: green;
+  font-size: 1rem;
+  font-weight: bold;
+}
